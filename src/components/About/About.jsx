@@ -55,7 +55,13 @@ const About = () => {
     ]
     return (
         <div className="relative min-h-screen bg-[#111111] text-white">
-
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_black_100%)]"
+                style={{
+                    backgroundImage: `radial-gradient(white 1px, transparent 1px)`,
+                    backgroundSize: '50px 50px',
+                    opacity: 0.2
+                }}
+            />
 
 
             {/* Main Content */}

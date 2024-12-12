@@ -31,6 +31,13 @@ const Contact = () => {
     return (
         <div>
             <div className="relative min-h-screen bg-[#111111] text-white">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_black_100%)]"
+                style={{
+                    backgroundImage: `radial-gradient(white 1px, transparent 1px)`,
+                    backgroundSize: '50px 50px',
+                    opacity: 0.1
+                }}
+            />
                 {/* Main Content */}
                 <div className="relative pt-32 px-6">
                     {/* Top Text */}
@@ -46,22 +53,22 @@ const Contact = () => {
                             <br />
                         </h1>
                     </motion.div>
-                    <motion.p
+                    {/* <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 1.2 }}
                         className="text-sm text-neutral-400 max-w-md ml-auto mt-24 mb-12"
                     >
                         For four generations, we've been crafting the legacy of metal, transforming it from a raw material into timeless art.
-                    </motion.p>
+                    </motion.p> */}
 
-                    <div className="min-h-screen bg-[#111111] text-white p-4 md:p-8 lg:p-8">
+                    <div className="min-h-screen mt-24  text-white p-4 md:p-8 lg:p-8">
                         {/* Motion Div */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="max-w-5xl mx-auto"
+                            className="max-w-6xl mx-auto"
                         >
                             {/* Header Section */}
                             <div className="space-y-6 text-left">
@@ -169,7 +176,7 @@ const Contact = () => {
                         </motion.div>
                     </div>
 
-                    <div className="min-h-screen bg-gradient-to-br from-[#111111] to-[#111111] text-white p-6 md:p-12">
+                    <div className="min-h-screen bg-gradient-to-br  text-white p-6 md:p-12">
                         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
                             {/* Left side: Google Map */}
                             <motion.div
@@ -276,7 +283,7 @@ const Contact = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 1.2 }}
-                        className="text-sm text-neutral-400 max-w-md ml-auto mt-24 mb-12"
+                        className="text-sm text-neutral-400 max-w-md ml-auto  mb-12"
                     >
                         For four generations, we've been crafting the legacy of metal, transforming it from a raw material into timeless art.
                     </motion.p>

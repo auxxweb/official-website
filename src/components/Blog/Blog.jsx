@@ -82,7 +82,7 @@ const Blog = () => {
 
                     </h1>
                 </motion.div>
-
+{/* 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -90,9 +90,9 @@ const Blog = () => {
                     className="text-sm text-neutral-400 max-w-md ml-auto mt-24 mb-12"
                 >
                     For four generations, we've been crafting the legacy of metal, transforming it from a raw material into timeless art.
-                </motion.p>
+                </motion.p> */}
 
-                
+                <br /><br /><br />
 
                 <div className="ml-8 mr-8 min-h-screen bg-[#111111] text-white p-8">
                     <motion.div

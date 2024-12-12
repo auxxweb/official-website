@@ -79,7 +79,13 @@ const CareerPage = () => {
     return (
         <div className="relative min-h-screen bg-[#111111] text-white">
 
-
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_black_100%)]"
+                style={{
+                    backgroundImage: `radial-gradient(white 1px, transparent 1px)`,
+                    backgroundSize: '50px 50px',
+                    opacity: 0.1
+                }}
+            />
 
             {/* Main Content */}
             <div className="relative pt-32 px-6">
@@ -98,19 +104,19 @@ const CareerPage = () => {
                     </h1>
                 </motion.div>
 
-                <motion.p
+                {/* <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.2 }}
                     className="text-sm text-neutral-400 max-w-md ml-auto mt-24 mb-12"
                 >
                     For four generations, we've been crafting the legacy of metal, transforming it from a raw material into timeless art.
-                </motion.p>
+                </motion.p> */}
 
                 <br /><br />
 
 
-                <div className="min-h-screen bg-[#111111] text-white p-8 font-mono">
+                <div className="min-h-screen mt-20 text-white p-8 font-mono">
                     <motion.h2
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -172,7 +178,7 @@ const CareerPage = () => {
                 </div>
 
 
-                <div className="min-h-screen bg-[#111111] text-white p-8 font-mono">
+                <div className="min-h-screen  text-white p-8 font-mono">
                     <div className="max-w-7xl mx-auto">
                         {/* Header */}
                         <motion.div
@@ -382,7 +388,7 @@ const CareerPage = () => {
 
 
 
-                <div className="min-h-screen bg-[#111111] text-white p-8 font-mono relative overflow-hidden">
+                <div className="min-h-screen  text-white p-8 font-mono relative overflow-hidden">
                     {/* Particle/Star Effect Background */}
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_black_100%)]"
                         style={{
@@ -454,7 +460,7 @@ const CareerPage = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.2 }}
-                    className="text-sm text-neutral-400 max-w-md ml-auto mt-24 mb-12"
+                    className="text-sm text-neutral-400 max-w-md ml-auto mb-12"
                 >
                     For four generations, we've been crafting the legacy of metal, transforming it from a raw material into timeless art.
                 </motion.p>

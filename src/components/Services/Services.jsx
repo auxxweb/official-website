@@ -73,9 +73,20 @@ const Services = () => {
             y: 0
         }
     }
+
+    const Corner = () => (
+        <span className="absolute w-4 h-4 text-gray-600">+</span>
+    )
+
     return (
         <div className="relative min-h-screen bg-[#111111] text-white">
-
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_black_100%)]"
+                style={{
+                    backgroundImage: `radial-gradient(white 1px, transparent 1px)`,
+                    backgroundSize: '50px 50px',
+                    opacity: 0.1
+                }}
+            />
 
 
             {/* Main Content */}
@@ -94,32 +105,35 @@ const Services = () => {
 
                     </h1>
                 </motion.div>
-
-                <motion.p
+                <br />
+                {/* <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.2 }}
                     className="text-sm text-neutral-400 max-w-md ml-auto mt-24 mb-12"
                 >
                     For four generations, we've been crafting the legacy of metal, transforming it from a raw material into timeless art.
-                </motion.p>
+                </motion.p> */}
 
 
-                <div className="min-h-screen bg-[#111111] text-white overflow-hidden">
+                <div className="min-h-screen  mt-10 text-white overflow-hidden">
                     <div className="max-w-7xl mx-auto px-4 py-20">
                         <motion.div
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="text-center mb-20"
+                            className="text-center mb-10"
                         >
-                            <motion.h2
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                className="text-3xl font-bold mb-12"
-                            >
-                                <span className="text-orange-500">What We Do </span>
-                                <span className="text-white/50"></span>
-                            </motion.h2>
+                           <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="mb-6"
+                        >
+                            <h2 className="text-5xl  font-bold">
+                                <span className="text-white">What</span>{" "}
+                                <span className="text-gray-500">We Do</span>
+                                <span className="text-orange-500">/</span>
+                            </h2>
+                        </motion.div>
                             <p className="text-xl text-gray-400">
                                 Empowering your vision with expert solutions.
                             </p>
@@ -133,53 +147,66 @@ const Services = () => {
                                 transition={{ duration: 0.5 }}
                                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] hidden lg:block"
                             >
-                                <div className="relative w-full h-full">
-                                    <div className="absolute inset-0 bg-gradient-to-r from-teal-500/20 to-transparent rounded-full blur-3xl" />
-                                    {/* <img
-                src="https://www.wespeakiot.com/wp-content/uploads/2017/12/when-products-turn-into-smart-services.jpg"
-                alt="Developer"
-                className="relative z-10"
-              /> */}
-                                </div>
+                               
                             </motion.div>
+                        </div>
 
-                            {/* Services Grid */}
-                            <motion.div
-                                variants={containerVariants}
-                                initial="hidden"
-                                animate="visible"
-                                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-20"
-                            >
-                                {services.map((service, index) => (
+
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {services.map((service, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: index * 0.1 }}
+                                    whileHover={{ scale: 1.02 }}
+                                    className="relative p-8 bg-[#111] rounded-sm border border-gray-800 group cursor-pointer"
+                                >
+                                    {/* Corners */}
+                                    <Corner /> {/* Top Left */}
+                                    <span className="absolute top-0 right-0 w-4 h-4 text-gray-600">+</span>
+                                    <span className="absolute bottom-0 left-0 w-4 h-4 text-gray-600">+</span>
+                                    <span className="absolute bottom-0 right-0 w-4 h-4 text-gray-600">+</span>
+
+                                    {/* Content */}
+                                    <div className="space-y-4">
+                                        <motion.h3
+                                            className="text-2xl font-bold"
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ delay: index * 0.2 }}
+                                        >
+                                            {service.title}
+                                        </motion.h3>
+                                        <motion.div
+                                            className="space-y-1"
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ delay: index * 0.3 }}
+                                        >
+                                            <p className="text-gray-400">
+                                                {service.description}
+                                                {/* {service.additionalText && (
+                                                    <>
+                                                        <br />
+                                                        {service.additionalText}
+                                                    </>
+                                                )} */}
+                                            </p>
+                                        </motion.div>
+                                    </div>
+
+                                    {/* Hover Effects */}
                                     <motion.div
-                                        key={service.title}
-                                        variants={itemVariants}
-                                        whileHover={{ scale: 1.05, y: -5 }}
-                                        className="group"
-                                    >
-                                        <div className="relative p-6 rounded-2xl overflow-hidden">
-                                            {/* Background Gradient */}
-                                            <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                        className="absolute inset-0 border border-gray-700 opacity-0 group-hover:opacity-100 transition-opacity"
+                                        initial={false}
+                                        whileHover={{ scale: 1.02 }}
+                                    />
 
-                                            {/* Border Gradient */}
-                                            <div className="absolute inset-0 rounded-2xl border border-teal-500/20 group-hover:border-teal-500/40 transition-colors duration-300" />
-
-                                            {/* Content */}
-                                            <div className="relative">
-                                                <div className="w-12 h-12 rounded-full bg-teal-500/10 flex items-center justify-center mb-4 group-hover:bg-teal-500/20 transition-colors duration-300">
-                                                    <service.icon className="w-6 h-6 text-teal-400" />
-                                                </div>
-                                                <h3 className="text-xl font-bold mb-3 text-teal-400">
-                                                    {service.title}
-                                                </h3>
-                                                <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                                                    {service.description}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </motion.div>
+                                    {/* Background Glow */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-gray-800/0 to-gray-800/0 group-hover:from-gray-800/5 group-hover:to-gray-800/10 transition-all duration-500" />
+                                </motion.div>
+                            ))}
                         </div>
 
                         {/* Bottom CTA */}
