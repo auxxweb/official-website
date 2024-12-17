@@ -88,14 +88,18 @@ const ScrollingRow = ({ tech, direction = 1, speed = 25 }) => {
 
 export default function TechStack() {
     return (
-        <div className="min-h-screen bg-[#111111] text-white py-20">
+        <div className="min-h-screen bg-[#111111] text-white  py-20">
+             
+
+                
+           
             <div className="max-w-7xl mx-auto px-4">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-16"
-                >
+                    >
                     Building digital brilliance with{' '}
                     <br />
                     <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
@@ -124,6 +128,7 @@ export default function TechStack() {
                     assist you in making informed technology decisions.
                 </motion.p>
             </div>
+           
         </div>
     )
 }
