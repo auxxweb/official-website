@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,7 +11,8 @@ const showcaseItems = [
     id: 1,
     number: "1",
     title: "Mobile App Development",
-    subtitle: "Intuitive, high-performance apps for iOS and Android, designed to engage your target audience.",
+    subtitle:
+      "Intuitive, high-performance apps for iOS and Android, designed to engage your target audience.",
     description:
       "Transform spaces with innovative architectural solutions that challenge conventional thinking and elevate the human experience.",
   },
@@ -17,7 +20,8 @@ const showcaseItems = [
     id: 2,
     number: "2",
     title: "Web Development",
-    subtitle: "Custom websites, e-commerce platforms, and web applications tailored to your unique business needs.",
+    subtitle:
+      "Custom websites, e-commerce platforms, and web applications tailored to your unique business needs.",
     description:
       "Pioneering new approaches to spatial design through cutting-edge technology and creative problem-solving.",
   },
@@ -25,7 +29,8 @@ const showcaseItems = [
     id: 3,
     number: "3",
     title: "UI/UX Design",
-    subtitle: "User-centric designs that enhance user experience and drive engagement.",
+    subtitle:
+      "User-centric designs that enhance user experience and drive engagement.",
     description:
       "Reimagining architectural possibilities through bold vision and transformative design thinking.",
   },
@@ -41,7 +46,8 @@ const showcaseItems = [
     id: 5,
     number: "5",
     title: "Digital Marketing",
-    subtitle: "Comprehensive strategies to increase your online presence and drive growth.",
+    subtitle:
+      "Comprehensive strategies to increase your online presence and drive growth.",
     description:
       "Evolving architectural practices to meet future challenges and environmental responsibilities.",
   },
@@ -56,7 +62,7 @@ const showcaseItems = [
   {
     id: 7,
     number: "7",
-    title: "Devops Automation ",
+    title: "Devops Automation",
     subtitle: "Streamlining Development with DevOps Automation.",
     description:
       "Creating harmony between aesthetic beauty and practical functionality in every design.",
@@ -72,7 +78,7 @@ const showcaseItems = [
   {
     id: 7,
     number: "7",
-    title: "Devops Automation ",
+    title: "Devops Automation",
     subtitle: "Streamlining Development with DevOps Automation.",
     description:
       "Creating harmony between aesthetic beauty and practical functionality in every design.",
@@ -91,6 +97,18 @@ export default function ServiceCard() {
   const containerRef = useRef(null);
   const cardsRef = useRef([]);
   const [activeCard, setActiveCard] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -98,84 +116,123 @@ export default function ServiceCard() {
 
     if (!container || cards.length === 0) return;
 
-    // Horizontal scroll animation
-    gsap.to(cards, {
-      xPercent: -100 * (cards.length - 5),
-      ease: "none",
-      scrollTrigger: {
-        trigger: container,
-        pin: true,
-        scrub: 1,
-        snap: 1 / (cards.length - 5),
-        end: () => "+=" + (container.offsetWidth * (cards.length - 5)) / 5,
-      },
+    let ctx = gsap.context(() => {
+      // Clear any existing ScrollTriggers
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+
+      if (isMobile) {
+        // Mobile animation
+        gsap.to(cards, {
+          xPercent: -100 * (cards.length - 1),
+          ease: "none",
+          scrollTrigger: {
+            trigger: container,
+            pin: true,
+            scrub: 1,
+            snap: 1 / (cards.length - 1),
+            end: () => "+=" + container.offsetWidth * (cards.length - 1),
+          },
+        });
+      } else {
+        // Desktop animation
+        gsap.to(cards, {
+          xPercent: -100 * (cards.length - 5),
+          ease: "none",
+          scrollTrigger: {
+            trigger: container,
+            pin: true,
+            scrub: 1,
+            snap: 1 / (cards.length - 5),
+            end: () => "+=" + (container.offsetWidth * (cards.length - 5)) / 5,
+          },
+        });
+      }
     });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
-  }, []);
+    return () => ctx.revert();
+  }, [isMobile]);
 
   const handleCardHover = (index) => {
-    setActiveCard(index);
-    const card = cardsRef.current[index];
-    if (card) {
-      gsap.to(card.querySelector(".content"), {
-        opacity: 1,
-        y: 0,
-        duration: 0.3,
-        ease: "power2.out",
-      });
+    if (!isMobile) {
+      setActiveCard(index);
+      const card = cardsRef.current[index];
+      if (card) {
+        gsap.to(card.querySelector(".content"), {
+          opacity: 1,
+          y: 0,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      }
     }
   };
 
   const handleCardLeave = (index) => {
-    setActiveCard(null);
-    const card = cardsRef.current[index];
-    if (card) {
-      gsap.to(card.querySelector(".content"), {
-        opacity: 0,
-        y: 20,
-        duration: 0.3,
-        ease: "power2.out",
-      });
+    if (!isMobile) {
+      setActiveCard(null);
+      const card = cardsRef.current[index];
+      if (card) {
+        gsap.to(card.querySelector(".content"), {
+          opacity: 0,
+          y: 20,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      }
     }
   };
 
   return (
     <div className="overflow-hidden ">
-      <div className="bg-[#111111] pt-32 py-2 h-[300px]">
-        <div className="container mx-auto">
-          <h2 className="text-5xl text-center font-bold bg-gradient-to-r from-blue-800 to-red-900 bg-clip-text text-transparent  mb-8">
+      <div className="bg-[#111111] h-[300px] pt-16 md:pt-32  py-2 md:h-[300px]">
+        <div className="container mx-auto bg-[#111111] px-4">
+          <h2 className="font-mono text-4xl md:text-6xl text-center font-bold bg-gradient-to-r from-[#008d92] to-[#295455] bg-clip-text text-transparent mb-4 md:mb-8">
             Our Services
           </h2>
-          <p className="text-center text-2xl text-gray-500">
+          <p className="font-mono pb-10 text-center text-lg md:text-2xl text-gray-500 px-4">
             At our IT service company, we offer a wide array of specialized
             solutions designed to meet the diverse needs of businesses in the
-            digital age{" "}
+            digital age
           </p>
         </div>
       </div>
-      <div ref={containerRef} className="h-screen relative flex">
+      <div
+        ref={containerRef}
+        className={`${
+          isMobile ? "h-[100vh] bg-[#111111] pt-60 pl-4 " : "h-screen"
+        } relative bg-[#111111] flex gap-4 md:gap-6 px-2 md:px-4`}
+      >
         {showcaseItems.map((item, index) => (
           <div
             key={item.id}
-            ref={(el) => el && (cardsRef.current[index] = el)}
-            className="flex-none w-1/3 h-full relative bg-[#111111] border border-gray-200"
+            ref={(el) => {
+              if (el) cardsRef.current[index] = el;
+            }}
+            className={`flex-none ${
+              isMobile ? "w-[90vw]" : "w-1/3"
+            } h-full relative bg-[#111111] border border-gray-200 rounded-lg shadow-lg overflow-hidden`}
             onMouseEnter={() => handleCardHover(index)}
             onMouseLeave={() => handleCardLeave(index)}
           >
-            <div className="absolute inset-0 flex flex-col justify-between p-8">
+            <div className="absolute inset-0 flex flex-col justify-between p-4 md:p-8">
               <div>
-                <h2 className="text-6xl text-start font-bold bg-gradient-to-r from-blue-800 to-red-900 bg-clip-text text-transparent mb-2">
+                <h2 className="font-mono text-3xl md:text-5xl text-start font-bold bg-gradient-to-r from-[#008d92] to-[#295455] bg-clip-text text-transparent mb-2">
                   {item.title}
                 </h2>
-                <div className="content mt-4 opacity-0 transform translate-y-4">
-                  <p className="text-2xl  text-white mb-4">{item.subtitle}</p>
-                  <p className="text-lg text-white">{item.description}</p>
+                <div
+                  className={`content mt-4 md:mt-8 mr-2 ${
+                    isMobile ? "" : "opacity-0 transform translate-y-4"
+                  }`}
+                >
+                  <p className="text-xl md:text-2xl font-mono text-white mb-4">
+                    {item.subtitle}
+                  </p>
+                  <p className="text-base md:text-lg font-mono text-white">
+                    {item.description}
+                  </p>
                 </div>
               </div>
-              <div className="number text-[120px] font-bold text-gray-100 pointer-events-none">
+              <div className="number text-6xl md:text-[120px] font-bold text-gray-100 pointer-events-none opacity-30">
                 {item.number}
               </div>
             </div>

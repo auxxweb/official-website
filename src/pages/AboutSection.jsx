@@ -16,7 +16,7 @@ const services = [
 const images = [
   {
     id: 1,
-    src: "https://etimg.etb2bimg.com/photo/99959880.cms",
+    src: "https://st.depositphotos.com/1907633/2378/i/450/depositphotos_23781507-stock-photo-businessman-hand-working-with-new.jpg",
     alt: "Office space",
   },
   {
@@ -26,12 +26,12 @@ const images = [
   },
   {
     id: 3,
-    src: "https://etimg.etb2bimg.com/photo/99959880.cms",
+    src: "https://t4.ftcdn.net/jpg/05/85/00/55/360_F_585005559_YNUJFQaDLRWN61mGNxWzz9GZypXSrOgz.jpg",
     alt: "Team meeting",
   },
   {
     id: 4,
-    src: "https://etimg.etb2bimg.com/photo/99959880.cms",
+    src: "https://t4.ftcdn.net/jpg/04/26/71/99/360_F_426719952_WtHWVePXzO2iBOdAX5IjGyCumcgj467Q.jpg",
     alt: "Working space",
   },
 ];
@@ -85,55 +85,53 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <div ref={containerRef} className="h-[700px] pt-10  pr-20 bg-[#111111] ">
-      <div className="container ml-10 mx-auto px-4  lg:py-20">
+    <div ref={containerRef} className="pt-10 pr-20 bg-[#111111]">
+      <div className="container ml-10 mx-auto px-4 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Section (Text) */}
           <div ref={textRef} className="space-y-8">
             <div className="inline-block">
-              <span className="text-blue-500 text-2xl font-semibold tracking-wider">
+              <span className="text-[#008d92] text-2xl font-semibold tracking-wider font-mono uppercase">
                 Who We Are
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-bold leading-tight bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+            <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-[#008d92] via-[#2b4f51] to-[#008d92] text-transparent bg-clip-text uppercase">
               Your Trusted Tech Partner.
             </h2>
 
-            <p className="text-gray-400 text-lg leading-relaxed">
+            <p className="text-gray-400 text-lg sm:text-md md:text-2xl leading-relaxed font-mono">
               We offer a wide range of comprehensive software development and
               digital marketing services aimed at helping your business succeed
               and grow in the rapidly evolving digital world.
-              <br /> Our team of
-              skilled professionals works closely with clients to create
-              tailored solutions that not only address their immediate needs but
-              also position them for future success. With expertise in modern
-              technologies and a deep understanding of market trends, we build
-              innovative software applications that streamline operations,
-              improve efficiency, and enhance the customer experience. 
-             
-              
+              <br /> Our team of skilled professionals works closely with
+              clients to create tailored solutions that not only address their
+              immediate needs but also position them for future success. With
+              expertise in modern technologies and a deep understanding of
+              market trends, we build innovative software applications that
+              streamline operations, improve efficiency, and enhance the
+              customer experience.
             </p>
 
-            <div className="services-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Services Section */}
+            {/* <div className="services-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
               {services.map((service) => (
                 <div
                   key={service.id}
                   className="service-card bg-gray-900/50 backdrop-blur-sm rounded-lg p-4 hover:bg-gray-800/50 transition-all duration-300"
                 >
                   <div className="flex items-center space-x-3">
-                    <span className="text-blue-500">{service.icon}</span>
+                    <span className="text-blue-500 bg-white">{service.icon}</span>
                     <span className="text-blue-500">{service.title}</span>
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
-          <div
-            ref={imagesRef}
-            className="gallery-container relative h-[400px] hidden lg:block"
-          >
-            <div className="grid grid-cols-6 grid-rows-6 gap-4 h-full">
+          {/* Right Section (Gallery/Images) */}
+          <div ref={imagesRef} className="gallery-container relative">
+            <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 grid-rows-6 gap-4 h-full">
               {images.map((image, index) => (
                 <div
                   key={image.id}
@@ -150,8 +148,7 @@ export default function AboutSection() {
                   <img
                     src={image.src}
                     alt={image.alt}
-                    fill
-                    className="object-cover transition-transform duration-700 hover:scale-110"
+                    className="object-cover transition-transform duration-700 hover:scale-110 w-full h-full"
                   />
                 </div>
               ))}

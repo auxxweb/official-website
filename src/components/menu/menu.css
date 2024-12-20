@@ -91,7 +91,7 @@ h1 sup {
     width: 100vw;
     height: 100vh;
     padding: 2em;
-    background: #cf5b45;
+    background: #008d92;
     z-index: 2;
     display: flex ;
     clip-path: polygon(0% 0%,100% 0%,100% 0%,0% 0%);
@@ -121,7 +121,7 @@ h1 sup {
 
 .menu-close-icon p {
     font-size: 100px;
-    -webkit-text-stroke: 3px #cf5b45;
+    -webkit-text-stroke: 3px #008d92;
     line-height: 70%;
 
 }
