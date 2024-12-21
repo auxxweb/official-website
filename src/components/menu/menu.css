@@ -1,17 +1,17 @@
 * {
-    margin:0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-font-smooting:antialiased;
+    -webkit-font-smoothing: antialiased;
 }
 
-body{
+body {
     font-family: Saans TRIAL;
     background: #000;
 }
 
-a,p {
-    color:#000;
+a, p {
+    color: #000;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 14px;
@@ -23,8 +23,7 @@ a,p {
     width: 100%;
     height: 100%;
     min-height: 100vh;
-    padding: 6em 2em ;
-       
+    padding: 6em 2em;
 }
 
 .page-content-hero {
@@ -35,8 +34,8 @@ a,p {
 h1 {
     position: absolute;
     top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 5vw;
     font-weight: 400;
     letter-spacing: -0.04em;
@@ -51,19 +50,9 @@ h1 sup {
     letter-spacing: 0;
 }
 
-@media (max-width:900px){
-    .page-content h1 {
-        font-size: 10vw;
-    }
-    h1 sup {
-        font-size: 4vw;
-    }
-}
-
-
-.menu-bar , .menu-overlay {
-    position:fixed;
-    top:0;
+.menu-bar, .menu-overlay {
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100vw;
     padding: 2em;
@@ -79,7 +68,7 @@ h1 sup {
     cursor: pointer;
 }
 
-.menu-close p{
+.menu-close p {
     color: #000;
     cursor: pointer;
 }
@@ -93,14 +82,14 @@ h1 sup {
     padding: 2em;
     background: #008d92;
     z-index: 2;
-    display: flex ;
-    clip-path: polygon(0% 0%,100% 0%,100% 0%,0% 0%);
+    display: flex;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
 }
 
 .menu-close-icon {
     flex: 2;
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     cursor: pointer;
 }
 
@@ -123,15 +112,12 @@ h1 sup {
     font-size: 100px;
     -webkit-text-stroke: 3px #008d92;
     line-height: 70%;
-
 }
-
 
 .menu-link-item {
     width: max-content;
-    clip-path: polygin(0 0, 100% 0 ,100% 100% 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
-
 
 .menu-link-item-holder {
     position: relative;
@@ -139,15 +125,23 @@ h1 sup {
 
 .menu-link-item-holder a {
     color: #000;
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 400;
     letter-spacing: -0.02em;
     line-height: 85%;
 }
 
+@media (max-width: 900px) {
+    .menu-link-item-holder a {
+        font-size: 55px;
+        font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 85%;
+    }
+  }
+
 .menu-info {
     display: flex;
-
 }
 
 .menu-info-col {
@@ -155,18 +149,4 @@ h1 sup {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-}
-
-@media (max-width:900px){
-    .menu-close-icon {
-        display:none;
-    }
-
-    .menu-copy {
-        padding-top: 8em;
-    }
-
-    .menu-link-item-holder a {
-        font-size: 60px;
-    }
 }

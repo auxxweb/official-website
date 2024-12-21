@@ -12,18 +12,18 @@ const showcaseItems = [
     number: "1",
     title: "Mobile App Development",
     subtitle:
-      "Intuitive, high-performance apps for iOS and Android, designed to engage your target audience.",
+      "Intuitive, high-performance apps for iOS and Android, designed to your target audience.",
     description:
-      "Transform spaces with innovative architectural solutions that challenge conventional thinking and elevate the human experience.",
+      "Transform spaces with innovative architectural solutions ",
   },
   {
     id: 2,
     number: "2",
     title: "Web Development",
     subtitle:
-      "Custom websites, e-commerce platforms, and web applications tailored to your unique business needs.",
+      "Custom websites, e-commerce platforms, and web applications tailored to your business needs.",
     description:
-      "Pioneering new approaches to spatial design through cutting-edge technology and creative problem-solving.",
+      "Pioneering new approaches to spatial design through cutting-edge technology.",
   },
   {
     id: 3,
@@ -199,32 +199,42 @@ export default function ServiceCard() {
       <div
         ref={containerRef}
         className={`${
-          isMobile ? "h-[100vh] bg-[#111111] pt-60 pl-4 " : "h-screen"
-        } relative bg-[#111111] flex gap-4 md:gap-6 px-2 md:px-4`}
+          isMobile ? "h-[100vh] bg-[#111111] pt-40 pl-4 " : "h-screen"
+        } relative bg-[#111111] h-[100vh] pt-40 flex gap-4 md:gap-6 px-2 md:px-4`}
       >
         {showcaseItems.map((item, index) => (
-          <div
-            key={item.id}
-            ref={(el) => {
-              if (el) cardsRef.current[index] = el;
-            }}
-            className={`flex-none ${
-              isMobile ? "w-[90vw]" : "w-1/3"
-            } h-full relative bg-[#111111] border border-gray-200 rounded-lg shadow-lg overflow-hidden`}
-            onMouseEnter={() => handleCardHover(index)}
-            onMouseLeave={() => handleCardLeave(index)}
-          >
-            <div className="absolute inset-0 flex flex-col justify-between p-4 md:p-8">
+         <div
+         key={item.id}
+         ref={(el) => {
+           if (el) cardsRef.current[index] = el;
+         }}
+         className={`flex-none ${
+           isMobile ? "w-[90vw]" : "w-1/3"
+         } h-[74vh] relative border border-gray-200 rounded-lg shadow-lg overflow-hidden bg-cover bg-center bg-no-repeat`}
+         style={{
+           backgroundImage:
+             "url('https://www.thecuneiform.com/wp-content/uploads/2024/04/MicrosoftTeams-image-58-1024x683.webp')",
+         }}
+         onMouseEnter={() => handleCardHover(index)}
+         onMouseLeave={() => handleCardLeave(index)}
+       >
+         {/* Black overlay */}
+         <div className="absolute inset-0 bg-black opacity-60 z-1"></div>
+         
+       
+       
+            <div className="absolute inset-0 flex flex-col justify-between p-4 md:p-8  ">
               <div>
-                <h2 className="font-mono text-3xl md:text-5xl text-start font-bold bg-gradient-to-r from-[#008d92] to-[#295455] bg-clip-text text-transparent mb-2">
+                <h2 className="font-mono text-3xl md:text-5xl text-start font-bold bg-gradient-to-r from-[#ffffff] to-[#295455] bg-clip-text text-transparent mb-2 relative">
                   {item.title}
                 </h2>
+
                 <div
-                  className={`content mt-4 md:mt-8 mr-2 ${
+                  className={`inline-block px-3 py-1 rounded-xl bg-white/10 text-sm backdrop-blur-sm mb-2 sm:mb-3 content mt-4 md:mt-8 mr-2 ${
                     isMobile ? "" : "opacity-0 transform translate-y-4"
                   }`}
                 >
-                  <p className="text-xl md:text-2xl font-mono text-white mb-4">
+                  <p className="inline-block px-3 py-1 rounded-xl bg-white/10 text-sm backdrop-blur-sm mb-2 sm:mb-3 text-xl md:text-2xl font-mono text-black mb-4">
                     {item.subtitle}
                   </p>
                   <p className="text-base md:text-lg font-mono text-white">
@@ -232,8 +242,8 @@ export default function ServiceCard() {
                   </p>
                 </div>
               </div>
-              <div className="number text-6xl md:text-[120px] font-bold text-gray-100 pointer-events-none opacity-30">
-                {item.number}
+              <div className="number text-2xl md:text-[30px] font-bold text-gray-100 pointer-events-none opacity-30">
+                <button>View more</button>
               </div>
             </div>
             <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-gray-200 to-gray-400" />

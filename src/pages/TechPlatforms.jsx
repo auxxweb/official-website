@@ -88,7 +88,7 @@ const ScrollingRow = ({ tech, direction = 1, speed = 25 }) => {
 
 export default function TechStack() {
   return (
-    <div className="min-h-screen bg-[#111111] text-[#008d92]  py-20">
+    <div className="m bg-[#111111] text-[#008d92]  py-20">
       <div className="max-w-7xl mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -105,8 +105,8 @@ export default function TechStack() {
             Believe in our ability to deliver results.
           </span>
         </motion.h2>
-
-        <LogoSlider/>
+{/* 
+        <LogoSlider/> */}
 
         {/* <div className="space-y-12">
           {techRows.map((row, index) => (
@@ -274,7 +274,7 @@ const logos = [
     }, [])
   
     return (
-      <div className="w-full bg-[#11111] py-20 overflow-hidden" ref={containerRef}>
+      <div className="w-full bg-[#111111] py-20 overflow-hidden" ref={containerRef}>
         <div className="max-w-7xl mx-auto px-4">
           
           <div className="relative">
@@ -287,12 +287,12 @@ const logos = [
                 {allLogos.map((logo, index) => (
                   <div
                     key={`${logo.id}-${index}`}
-                    className="flex-none w-[200px] h-20 bg-black rounded-lg flex items-center justify-center  border border-gray-800 hover:border-green-500 transition-colors duration-300"
+                    className="flex-none w-[200px] h-20  rounded-lg flex items-center justify-center   border-gray-800 hover:border-green-500 transition-colors duration-300"
                   >
                     <img
                       src={logo.image}
                       alt={logo.name}
-                      className="max-w-[300px] max-h-full object-cover  filter invert"
+                      className="max-w-[200px] max-h-full object-cover  filter invert"
                     />
                   </div>
                 ))}

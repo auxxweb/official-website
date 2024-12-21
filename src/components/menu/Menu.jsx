@@ -7,17 +7,15 @@ import { useGSAP } from "@gsap/react";
 const menuLinks = [
   { path: "/", label: "Home" },
   { path: "/about", label: "about" },
-  { path: "/career", label: "career" },
-  { path: "/contact", label: "contact" },
   { path: "/services", label: "services" },
+  { path: "/careers", label: "careers" },
   { path: "/blogs", label: "blogs" },
-
+  { path: "/contact", label: "contact" },
 ];
 
 const Menu = () => {
   const container = useRef();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const tl = useRef();
 
   const toggleMenu = () => {
@@ -54,20 +52,20 @@ const Menu = () => {
   }, [isMenuOpen]);
 
   return (
-    <div className="menu-container " ref={container}>
-      <div className="menu-bar ">
+    <div className="menu-container" ref={container}>
+      <div className="menu-bar">
         <div className="menu-logo inline-block px-3 py-1 rounded-xl bg-white/10 text-sm backdrop-blur-sm mb-2 sm:mb-3">
           <NavLink to="/" exact>
             <img
               src="/1.png"
               alt="Logo"
               className="object-contain"
-              style={{ width: "220px", height: "60px" }} // Add explicit styles
+              style={{ width: "220px", height: "60px" }}
             />
           </NavLink>
         </div>
         <div
-          className="menu-open mr-6 flex items-center cursor-pointer  px-2 py-4 rounded-xl bg-white/10 text-sm backdrop-blur-sm mb-2 sm:mb-3"
+          className="menu-open mr-2 flex items-center cursor-pointer px-2 py-4 rounded-xl bg-white/10 text-sm backdrop-blur-sm mb-2 sm:mb-3"
           onClick={toggleMenu}
         >
           <svg
@@ -85,24 +83,28 @@ const Menu = () => {
             />
           </svg>
         </div>
+
         <div className="menu-overlay">
           <div className="menu-ovrlay-bar">
             <div className="menu-logo">
               <NavLink to="/" exact>
-              <img
-              src="/3.png"
-              alt="Logo"
-              className="object-contain"
-              style={{ width: "220px", height: "60px" }} // Add explicit styles
-            />
+                <img
+                  src="/3.png"
+                  alt="Logo"
+                  className="object-contain"
+                  style={{ width: "220px", height: "60px" }}
+                />
               </NavLink>
             </div>
           </div>
+
+          {/* Always show the close icon */}
           <div className="menu-close-icon">
             <div className="menu-close" onClick={toggleMenu}>
               <p>&#x2715;</p>
             </div>
           </div>
+
           <div className="menu-copy">
             <div className="menu-links">
               {menuLinks.map((link, index) => (
@@ -129,8 +131,7 @@ const Menu = () => {
               </div>
             </div>
           </div>
-          <div className="menu-preview">
-          </div>
+          <div className="menu-preview"></div>
         </div>
       </div>
     </div>

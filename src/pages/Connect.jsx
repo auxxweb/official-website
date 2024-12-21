@@ -111,12 +111,12 @@ export default function ConnectWithUs() {
           Connect With Us <br />
           Let us bring your ideas to life.
         </h2>
-        <p className="text-lg md:text-xl text-white/90 font-mono">
+        <p className="text-lg sm:pl-16 sm:pr-16 md:text-xl text-white/90 ">
           When you succeed, we succeed. Our team of experts will go above and
           beyond to understand your business and implement a solution that
           shows immediate impact.
         </p>
-        <Button  className="bg-[#008d92] text-emerald-900 hover:bg-white/90 font-semibold px-8 py-4 rounded-full">
+        <Button  className="bg-[#008d92] text-emerald-900 hover:bg-white/10 font-semibold px-8 py-4 rounded-full">
           Contact Us
         </Button>
         <div className="flex flex-wrap gap-6 items-center justify-center mt-8">

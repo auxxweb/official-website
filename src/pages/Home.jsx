@@ -10,6 +10,7 @@ import ServiceCard from '../components/HorizontalScroll/HorizontalScroll';
 import AboutSection from './AboutSection';
 import ConnectWithUs from './Connect';
 import AnimatedHero from './Banner';
+import FloatingBubbles from './Companies';
 
 const Home = () => {
     return (
@@ -31,6 +32,7 @@ const Home = () => {
             <ServiceCard/>
             <PeopleCards/>
             <TechStack/>
+            <FloatingBubbles/>
             <PricingCards />
             <ConnectWithUs/>
             <Footer />

@@ -131,7 +131,7 @@ export default function AboutSection() {
 
           {/* Right Section (Gallery/Images) */}
           <div ref={imagesRef} className="gallery-container relative">
-            <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 grid-rows-6 gap-4 h-full">
+            <div className="grid grid-cols-3  sm:grid-cols-4 lg:grid-cols-6 grid-rows-6 gap-4 h-full">
               {images.map((image, index) => (
                 <div
                   key={image.id}

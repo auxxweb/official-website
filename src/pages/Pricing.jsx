@@ -104,28 +104,7 @@ export default function PricingCards() {
       />
       <div className="relative min-h-[80vh] overflow-hidden">
         {/* Animated Stars */}
-        <div className="absolute inset-0">
-          {[...Array(50)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-white rounded-full"
-              initial={{
-                opacity: Math.random() * 0.5 + 0.25,
-                x: Math.random() * 100 + "%",
-                y: Math.random() * 100 + "%",
-              }}
-              animate={{
-                opacity: [null, 0, Math.random() * 0.5 + 0.25],
-                scale: [null, 1.2, 1],
-              }}
-              transition={{
-                duration: Math.random() * 3 + 2,
-                repeat: Infinity,
-                repeatType: "reverse",
-              }}
-            />
-          ))}
-        </div>
+       
 
         {/* Curved Line */}
         <motion.div
