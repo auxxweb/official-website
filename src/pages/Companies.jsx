@@ -4,13 +4,13 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Sphere, useTexture } from '@react-three/drei';
 
 const bubbleData = [
-  { imgSrc: './Logo/client-(1).jpg', size: "lg", delay: 0 },
-  { imgSrc: './Logo/client-(2).jpg', size: "md", delay: 0.2 },
+  { imgSrc: './Logo/client-(1).jpg', size: "xl", delay: 0 },
+  { imgSrc: './Logo/client-(2).jpg', size: "xl", delay: 0.2 },
   { imgSrc: './Logo/client-(3).jpg', size: "xl", delay: 0.4 },
-  { imgSrc: './Logo/client-(4).jpg', size: "lg", delay: 0.6 },
-  { imgSrc: './Logo/client-(5).jpg', size: "sm", delay: 0.8 },
-  { imgSrc: './Logo/client-(6).jpg', size: "md", delay: 1 },
-  { imgSrc: './Logo/client-(7).jpg', size: "sm", delay: 1.2 },
+  { imgSrc: './Logo/client-(4).jpg', size: "xl", delay: 0.6 },
+  { imgSrc: './Logo/client-(5).jpg', size: "xl", delay: 0.8 },
+  { imgSrc: './Logo/client-(6).jpg', size: "xl", delay: 1 },
+  { imgSrc: './Logo/client-(7).jpg', size: "xl", delay: 1.2 },
   { imgSrc: './Logo/client-(8).jpg', size: "xl", delay: 1.4 },
   // Adding more bubbles for better coverage
   { imgSrc: './Logo/client-(9).jpg', size: "md", delay: 1.6 },
@@ -23,10 +23,10 @@ const bubbleData = [
   { imgSrc: './Logo/client-(4).png', size: "md", delay: 1.6 },
   { imgSrc: './Logo/client-(5).png', size: "lg", delay: 1.8 },
   { imgSrc: './Logo/client-(6).png', size: "sm", delay: 2.0 },
-  { imgSrc: './Logo/client-(7).png', size: "md", delay: 2.2 },
-  { imgSrc: './Logo/client-(5).png', size: "lg", delay: 1.8 },
-  { imgSrc: './Logo/client-(8).png', size: "sm", delay: 2.0 },
-  { imgSrc: './Logo/client-(9).png', size: "md", delay: 2.2 },
+  { imgSrc: './Logo/client-(5).png', size: "md", delay: 2.2 },
+  { imgSrc: './Logo/client-(3).png', size: "lg", delay: 1.8 },
+  { imgSrc: './Logo/client-(2).png', size: "sm", delay: 2.0 },
+  { imgSrc: './Logo/client-(2).png', size: "md", delay: 2.2 },
 ];
 
 const sizeMap = {
@@ -159,11 +159,11 @@ export default function FloatingBubbles() {
               boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.6)",
             }}
           >
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-green-500/50 to-green-700/50" />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br  from-green-500/50 to-green-700/50" />
             <img
               src={bubble.imgSrc}
               alt="bubble image"
-              className={`${iconSizeMap[bubble.size]} object-contain z-10`}
+              className={`${iconSizeMap[bubble.size]} w-20 rounded-full h-20 object-contain z-10`}
             />
           </div>
         );
