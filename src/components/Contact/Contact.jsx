@@ -255,9 +255,9 @@ const Contact = () => {
                         Address
                       </h4>
                       <p className="text-gray-300 group-hover:text-white transition-colors">
-                        4671 Sugar Camp Road,
+                        Hilite Business Park
                         <br />
-                        Owatonna, Minnesota, 55060
+                        Poovangal, Pantheeramkavu, Kerala 673014
                       </p>
                     </div>
                   </motion.div>
@@ -309,31 +309,38 @@ const Contact = () => {
                       Icon: Facebook,
                       color: "bg-blue-600",
                       hover: "hover:bg-blue-700",
+                      link: "https://www.facebook.com/profile.php?id=61571207122327", // Replace with your Facebook link
                     },
                     {
                       Icon: Twitter,
                       color: "bg-sky-500",
                       hover: "hover:bg-sky-600",
+                      link: "https://x.com/AuxxWeb", // Replace with your Twitter link
                     },
                     {
                       Icon: Instagram,
                       color: "bg-pink-600",
                       hover: "hover:bg-pink-700",
+                      link: "https://www.instagram.com/auxxweb_solutions/", // Replace with your Instagram link
                     },
                     {
                       Icon: Linkedin,
                       color: "bg-blue-700",
                       hover: "hover:bg-blue-800",
+                      link: "https://www.linkedin.com/company/auxxweb-solutions/", // Replace with your LinkedIn link
                     },
                     {
                       Icon: Github,
                       color: "bg-gray-800",
                       hover: "hover:bg-gray-900",
+                      link: "https://github.com/auxxweb", // Replace with your GitHub link
                     },
-                  ].map(({ Icon, color, hover }, index) => (
+                  ].map(({ Icon, color, hover, link }, index) => (
                     <motion.a
                       key={index}
-                      href="#"
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       variants={itemVariant}
                       whileHover={{ scale: 1.2, rotate: 360 }}
                       className={`${color} ${hover} p-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl`}

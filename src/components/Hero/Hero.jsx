@@ -1,88 +1,102 @@
-import React, { useLayoutEffect, useRef } from "react";
-import "./hero.css";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import AboutSection from "../../pages/AboutSection";
 
-gsap.registerPlugin(ScrollTrigger);
 
-export const Heroo = () => {
-  const imgContainer = useRef(null);
-  const centerImg = useRef(null);
-  const leftImg = useRef(null);
-  const rightImg = useRef(null);
-  const text1 = useRef(null);
-  const text2 = useRef(null);
+import React, { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      // Create the scroll animation for the hero content
-      gsap
-        .timeline({ 
-          scrollTrigger: {
-            trigger: imgContainer.current,
-            pin: true,
-            scrub: 2, // Smooth scrolling effect
-            start: "top top",
-            end: "bottom top", // Transition ends as the section scrolls up
-            pinSpacing: true, // Ensures space after the pinned section
-          },
-        })
-        .to(centerImg.current, { scale: 0.8, duration: 1 }, 0)
-        .to(leftImg.current, { x: "-50%", opacity: 0, duration: 1 }, 0.1)
-        .to(rightImg.current, { x: "50%", opacity: 0, duration: 1 }, 0.1)
-        .to(text1.current, { y: -150, opacity: 0, duration: 1 }, 0.2)
-        .to(text2.current, { y: -150, opacity: 0, duration: 1 }, 0.3);
-    });
+gsap.registerPlugin(ScrollTrigger)
 
-    return () => ctx.revert(); // Cleanup GSAP animations
-  }, []);
+const surroundingImages = [
+  { src: './banner/bnr (1).png', alt: 'Surrounding Image 1' },
+  { src: './banner/bnr (3).png', alt: 'Surrounding Image 2' },
+  { src: './banner/bnr (2).png', alt: 'Surrounding Image 3' },
+  { src: './banner/bnr (5).png', alt: 'Surrounding Image 4' },
+  { src: './banner/bnr (6).png', alt: 'Surrounding Image 5' },
+  { src: './banner/bnr (2).png', alt: 'Surrounding Image 6' },
+  { src: './banner/bnr (4).png', alt: 'Surrounding Image 7' },
+  { src: './banner/bnr (3).png', alt: 'Surrounding Image 8' },
+]
 
-  return ( 
-    <>
-      {/* Hero Section */}
-      <div className="relative bg-[#111111] h-[110vh]">
-        {/* Main Image Container */}
-        <div
-          ref={imgContainer}
-          className="perspective img-container flex items-center justify-center h-full w-screen overflow-hidden"
-        >
-          {/* Left Image */}
-          <img
-            ref={leftImg}
-            src="https://png.pngtree.com/png-vector/20241017/ourmid/pngtree-design-a-dynamic-flowing-splash-of-paint-in-multiple-bright-colors-png-image_14107624.png"
-            alt="Left"
-            className="absolute left-[-20%] w-2/4 object-cover"
-          />
+export default function Heroo() {
+  const sectionRef = useRef(null)
+  const imagesRef = useRef([])
 
-          {/* Right Image */}
-          <img
-            ref={rightImg}
-            src="https://png.pngtree.com/png-vector/20241017/ourmid/pngtree-design-a-dynamic-flowing-splash-of-paint-in-multiple-bright-colors-png-image_14107624.png"
-            alt="Right"
-            className="absolute right-[-20%] w-2/4 object-cover"
-          />
+  useEffect(() => {
+    if (sectionRef.current) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1,
+          pin: true,
+        },
+      })
 
-          {/* Text Overlay */}
-          <div className="text-white absolute flex flex-col items-center justify-center">
-            <h1 ref={text1} className="text-[100px] font-bold">
-              <span className="text-stroke">Auxxweb Solutions</span>
-            </h1>
-            <p
-              ref={text2}
-              className="opacity-50 mt-8 text-[19px] text-white text-center"
-            >
-              Uniting Efforts to Achieve Greater Success Together
-            </p>
-          </div>
-        </div>
+      // Animate surrounding images
+      imagesRef.current.forEach((img, index) => {
+        if (img) {
+          tl.to(
+            img,
+            {
+              opacity: 0,
+              scale: 0.8,
+              y: index % 2 === 0 ? -50 : 50,
+              duration: 1,
+            },
+            0
+          )
+        }
+      })
+
+      // Animate center image
+      tl.to(
+        '.center-image',
+        {
+          opacity: 0,
+          scale: 1.2,
+          duration: 1,
+        },
+        0
+      )
+    }
+  }, [])
+
+  return (
+    <section ref={sectionRef} className="h-screen relative overflow-hidden bg-[#111111]">
+      <div className="absolute inset-0 flex items-center justify-center">
+        <img
+          src="./banner/bnr (7).png"
+          alt="Center Image"
+          className="center-image w-64 h-64 object-cover rounded-full shadow-lg"
+        />    
       </div>
+      {surroundingImages.map((img, index) => (
+        <img
+          key={index}
+          ref={(el) => (imagesRef.current[index] = el)} 
+          src={img.src}
+          alt={img.alt}
+          className={`absolute w-32 h-32 object-cover rounded-lg shadow-md transform ${getImagePosition(
+            index
+          )}`}
+        />
+      ))}
+    </section>
+  )
+}
 
-      {/* About Section */}
-      <div className="relative">
-        <AboutSection />
-      </div>
-    </>
-  );
-};
-  
+function getImagePosition(index) {
+  const positions = [
+    'top-1/4 left-1/4',
+    'top-1/4 right-1/4',
+    'bottom-1/4 left-1/4',
+    'bottom-1/4 right-1/4',
+    'top-1/2 left-10',
+    'top-1/2 right-10',
+    'left-1/2 top-10',
+    'left-1/2 bottom-10',
+  ]
+  return positions[index % positions.length]
+}
+

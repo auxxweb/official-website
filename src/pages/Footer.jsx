@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "../components/ui/button";
-import { Facebook, Instagram, Twitter, Music } from "lucide-react";
+import { Facebook, Instagram, Twitter, Music, Linkedin } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import Menu from "../components/menu/Menu";
 
@@ -26,12 +26,13 @@ export default function Footer() {
         >
           <Button
             className={`bg-transparent border border-[#00FF00] text-[#00FF00] rounded-full px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg
-            transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00FF00] 
-            hover:scale-110 hover:rounded-[30px] ${
-              isHovered ? "opacity-100 scale-110" : "opacity-0 scale-90"
-            }`}
+  transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00FF00] 
+  hover:scale-110 hover:rounded-[30px] ${
+    isHovered ? "opacity-100 scale-110" : "opacity-0 scale-90"
+  }`}
+            onClick={() => (window.location.href = "tel:+91 8590037942")} // Replace with your phone number
           >
-            Get Early Access Now
+            Reach Out to Us
             <span className="ml-2 text-xl sm:text-2xl">+</span>
           </Button>
         </div>
@@ -49,10 +50,10 @@ export default function Footer() {
           {/* Middle Section - Social Icons */}
           <div className="flex items-center justify-center gap-4 my-4 md:my-0">
             {[
-              { Icon: Facebook, href: "#" },
-              { Icon: Twitter, href: "#" },
-              { Icon: Music, href: "#" },
-              { Icon: Instagram, href: "#" },
+              { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=61571207122327" },
+              { Icon: Twitter, href: "https://x.com/AuxxWeb" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/company/auxxweb-solutions/" },
+              { Icon: Instagram, href: "https://www.instagram.com/auxxweb_solutions/" },
             ].map(({ Icon, href }, index) => (
               <NavLink
                 key={index}
@@ -67,10 +68,16 @@ export default function Footer() {
 
           {/* Right Section */}
           <div className="flex flex-col md:flex-row gap-2 md:gap-4 text-neutral-400 text-xs md:text-sm">
-            <NavLink to="#" className="hover:text-[#008d92] text-white transition-colors">
+            <NavLink
+              to="#"
+              className="hover:text-[#008d92] text-white transition-colors"
+            >
               Terms & Conditions
             </NavLink>
-            <NavLink to="#" className="hover:text-[#008d92] ml-4 text-white transition-colors">
+            <NavLink
+              to="#"
+              className="hover:text-[#008d92] ml-4 text-white transition-colors"
+            >
               Privacy Policy
             </NavLink>
           </div>
