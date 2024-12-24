@@ -30,7 +30,7 @@ const About = () => {
 
   return (
     <div className="relative min-h-screen bg-[#111111] text-white">
-        <Menu/>
+      <Menu />
       {/* Background Overlay */}
       <div
         className="pt-10 absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_black_100%)]"
@@ -75,7 +75,7 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              SINCE 2023
+              Let's Build Something Great Together
             </motion.p>
             <motion.h2
               className="text-2xl md:text-4xl lg:text-5xl font-medium tracking-tight"
@@ -91,11 +91,16 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              We offer a wide range of comprehensive software development and
-              digital marketing services tailored to meet the unique needs of
-              your business. Whether you’re a startup or an established
-              company, our dedicated team is here to guide you every step of
-              the way.
+              Welcome to Auxxweb Solutions, the best IT company in Calicut. We
+              are a group of specialists who are passionate and devoted to
+              providing outstanding digital solutions. Using cutting-edge
+              technology and creative approaches, our goal is to empower
+              businesses. 
+              <br />At Auxxweb Solutions, we specialize in providing a
+              comprehensive range of IT services tailored to meet the unique
+              needs of our clients. From web development and mobile app creation
+              to digital marketing and IT consulting, we offer solutions that
+              drive growth and success.
             </motion.p>
           </div>
 

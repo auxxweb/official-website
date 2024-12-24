@@ -19,51 +19,55 @@ const Services = () => {
       icon: Smartphone,
       title: "MOBILE APP",
       description:
-        "Intuitive, high-performance apps for iOS and Android, designed to engage your target audience.",
+        " Our  platoon specializes in developing innovative mobile  operations for both Android and iOS platforms. Being a top IT company in Calicut, we  concentrate on delivering apps that are n't only functional but also offer a  flawless  stoner experience. ",
     },
     {
       icon: Globe,
       title: "WEB DEVELOPMENT",
       description:
-        "Custom websites, e-commerce platforms, and web applications tailored to your unique business needs.",
+        "As a premier IT company in Calicut, we create responsive, engaging, and user-friendly websites tailored to meet your specific business needs. We offer a wide range of web development services, from basic websites to complex web applications.",
     },
     {
       icon: Palette,
       title: "UI/UX DESIGN",
       description:
-        "User-centric designs that enhance user experience and drive engagement.",
+        " We design intuitive and visually  charming  stoner interfaces that enhance  stoner experience. As the stylish IT company in Calicut, our UI/ UX design services  insure that your digital products are both aesthetically pleasing and easy to navigate. ",
     },
     {
       icon: TestTube,
       title: "SOFTWARE TESTING",
       description:
-        "Ensuring Quality Through Comprehensive Testing Methodologies.",
+        "We provide thorough software testing services to ensure your applications are reliable, secure, and bug-free. Our testing processes, offered by the most trusted IT company in Calicut, help identify and resolve issues before they impact your users.",
     },
     {
       icon: TrendingUp,
       title: "DIGITAL MARKETING",
       description:
-        "Comprehensive strategies to increase your online presence and drive growth.",
+        "Our digital marketing services are designed to drive online growth and increase your brand's visibility. We offer SEO, social media marketing, content marketing, and more to help you reach your target audience effectively. Our expertise as an IT company in Calicut guarantees results that propel your business forward.",
     },
     {
       icon: Cloud,
       title: "CLOUD COMPUTING",
-      description: "Transforming Businesses with Scalable Cloud Computing.",
+      description:
+        "Transforming Businesses with Scalable Cloud Computing. Cloud computing enables businesses to leverage scalable, flexible, and cost-effective infrastructure that can rapidly adapt to changing demands. By moving to the cloud, organizations can access powerful computing resources on-demand, without the need for costly hardware investments.",
     },
     {
       icon: Settings,
       title: "DEVOPS AUTOMATION",
-      description: "Streamlining Development with DevOps Automation.",
+      description:
+        "Streamlining your development and operations for faster and more efficient delivery. Our DevOps automation services, supported by the expertise of an IT company in Calicut, enhance collaboration and productivity.",
     },
     {
       icon: Box,
       title: "SOFTWARE PROTOTYPING",
-      description: "Bringing Ideas to Life with Software Prototyping.",
+      description:
+        "Bringing Ideas to Life with Software Prototyping. Software prototyping is a critical phase in the product development process that allows businesses and developers to test ideas, validate assumptions, and gather user feedback before committing to a final product. ",
     },
     {
       icon: Box,
-      title: "SOFTWARE PROTOTYPING",
-      description: "Bringing Ideas to Life with Software Prototyping.",
+      title: "SOFTWARE TESTING",
+      description:
+        "Ensuring your software is reliable, secure, and bug-free through rigorous testing. Our thorough testing processes, backed by our reputation as an IT company in Calicut, guarantee smooth and secure operation.",
     },
   ];
 
@@ -155,7 +159,9 @@ const Services = () => {
               </h2>
             </motion.div>
             <p className="text-xl text-gray-400 font-mono">
-              Empowering your vision with expert solutions.
+              At Auxxweb Solutions, the leading IT company in Calicut, we offer
+              a range of services to help your business thrive in the digital
+              world{" "}
             </p>
           </motion.div>
 
@@ -236,13 +242,24 @@ const Services = () => {
             transition={{ delay: 0.5 }}
             className="text-center mt-20"
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">
-              Ready to bring your vision to life?
-            </h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              className="text-neutral-400 text-center mt-6 max-w-xl mx-auto text-sm md:text-base"
+            >
+              Once you're satisfied with the plan, we'll get to work, ensuring
+              timely delivery and exceptional quality to help your business
+              thrive. As the best IT company in Calicut, we’ll guide you through
+              the best solutions, leveraging our expertise to deliver results
+              that exceed your expectations. Our dedicated team is committed to
+              providing high-quality services tailored to your business needs,
+              ensuring growth and success.
+            </motion.p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-teal-500 text-white rounded-full font-medium hover:bg-teal-400 transition-colors duration-300"
+              className="px-8 py-3 mt-4 bg-teal-500 text-white rounded-full font-medium hover:bg-teal-400 transition-colors duration-300"
             >
               Get Started
             </motion.button>

@@ -8,12 +8,12 @@ const CareerPage = () => {
   const jobs = [
     {
       title: "Backend Developers",
-      positions: "3 positions",
+      positions: "1 positions",
       additionalText: "",
     },
     {
       title: "Frontend Developers",
-      positions: "2 positions",
+      positions: "1 positions",
       additionalText: "",
     },
     {
@@ -78,7 +78,7 @@ const CareerPage = () => {
 
   return (
     <div className="relative min-h-screen bg-[#111111] text-white">
-        <Menu/>
+      <Menu />
       <div
         className="pt-10 absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_black_100%)]"
         style={{
@@ -108,8 +108,13 @@ const CareerPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          For four generations, we've been crafting the legacy of metal,
-          transforming it from a raw material into timeless art.
+           <p className="pt-8 text-2xl md:text-2xl lg:text-2xl text-white leading-none">
+           Join the Best IT Company in Calicut!
+          </p>
+
+          At Auxxweb Solutions, we’re not just building software and digital
+          solutions—we’re shaping the future of technology. As the best IT
+          company in Calicut.
         </motion.p>
 
         <div className="min-h-screen mt-20 text-white font-mono">
@@ -120,7 +125,22 @@ const CareerPage = () => {
           >
             why choose <span className="text-[#008d92]">Auxxweb</span>
             <span className="text-white/50">/</span>
+            <motion.p
+              className="text-neutral-400 mt-6 mx-auto text-sm md:text-base"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+            >
+              At Auxxweb Solutions, the best IT company in Calicut, we pride
+              ourselves on the work we do and the team that makes it all
+              possible. We offer a stimulating environment where your
+              contributions make a direct impact on our success. From developing
+              innovative software solutions to executing strategic marketing
+              campaigns, your work here will challenge and inspire you every
+              day.
+            </motion.p>
           </motion.h2>
+
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6">
               {benefits.map((benefit, index) => (
@@ -181,6 +201,33 @@ const CareerPage = () => {
 
         <div className="min-h-screen  text-white pt-8 font-mono">
           <div className="max-w-7xl mx-auto">
+            <motion.h2
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="text-3xl font-bold mb-12"
+            >
+              why
+              <span className="text-[#008d92]"> Work with Us?</span>
+              <span className="text-white/50">/</span>
+              <motion.p
+                className="text-neutral-400 mt-6 mx-auto text-sm md:text-base"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+              >
+                As the leading IT company in Calicut, we are committed to
+                providing our employees with opportunities for professional
+                development, work-life balance, and a culture that encourages
+                collaboration and innovation. By joining our team, you'll be
+                working alongside some of the brightest minds in the industry,
+                helping to develop cutting-edge solutions for our clients. We
+                believe in nurturing talent, and we are always looking for
+                driven individuals to be part of our success. With competitive
+                salaries, flexible working conditions, and a focus on continuous
+                learning, Auxxweb Solutions is the ideal place to build your
+                career.
+              </motion.p>
+            </motion.h2>
             {/* Header */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -254,6 +301,24 @@ const CareerPage = () => {
                 </motion.div>
               ))}
             </div>
+            <motion.p
+              className="text-neutral-400 text-center mt-6 max-w-xl mx-auto text-sm md:text-base"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+            >
+              If you’re ready to take the next step in your career with an
+              innovative and forward-thinking company, Auxxweb Solutions is the
+              place for you. Become part of our team and help us shape the
+              future of technology in Calicut.
+              <br />
+              <button
+                type="submit"
+                className="w-[200px] mt-4 bg-[#008d92] text-black rounded-full text-xl py-4 font-bold hover:bg-[#008d92] transition-colors group relative overflow-hidden"
+              >
+                Apply Now
+              </button>
+            </motion.p>
           </div>
         </div>
 

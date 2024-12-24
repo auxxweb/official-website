@@ -70,8 +70,8 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            For four generations, we've been crafting the legacy of metal,
-            transforming it from a raw material into timeless art.
+            As the best IT company in Calicut, we make sure you're always
+            informed about the latest trends and services
           </motion.p>
           {/* <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -360,8 +360,12 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="text-sm text-neutral-400 max-w-md ml-auto  mb-12"
           >
-            For four generations, we've been crafting the legacy of metal,
-            transforming it from a raw material into timeless art.
+            Subscribe to our newsletter and connect with us on WhatsApp to get
+            the latest updates, projects, and exclusive offers directly on your
+            phone. As the best IT company in Calicut, we make sure you're always
+            informed about the latest trends and services. Join our community
+            today and stay connected with Auxxweb Solutions to receive insights
+            and offers that can help your business grow!
           </motion.p>
         </div>
 

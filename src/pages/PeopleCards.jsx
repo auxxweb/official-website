@@ -24,9 +24,9 @@ const PeopleCards = () => {
     },
     {
       id: 4,
-      name: "Bob Brown",
-      designation: "Data Scientist",
-      image: "./team/adarsh.jpeg",
+      name: "Sooraj",
+      designation: " Chief Client Relations Officer",
+      image: "./team/sooraj.jpg",
     },
   ];
 

@@ -52,9 +52,9 @@ const Menu = () => {
   }, [isMenuOpen]);
 
   return (
-    <div className="menu-container" ref={container}>
+    <div className="menu-container " ref={container}>
       <div className="menu-bar">
-        <div className="menu-logo inline-block px-3 py-1 rounded-xl bg-white/10 text-sm backdrop-blur-sm mb-2 sm:mb-3">
+        <div className="menu-logo  inline-block px-3 py-1 rounded-xl bg-white/10 text-sm backdrop-blur-sm mb-2 sm:mb-3">
           <NavLink to="/" exact>
             <img
               src="/1.png"

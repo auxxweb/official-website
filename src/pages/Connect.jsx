@@ -100,37 +100,38 @@ export default function ConnectWithUs() {
 
   return (
     <div className="bg-[#111111]">
-
-   
-    <div
-      ref={containerRef}
-      className="h-auto mx-4  rounded-3xl flex flex-col items-center justify-center px-6 py-16 bg-gradient-to-br from-[#008d92] via-[#528e90] to-[#4f9fa2]"
-    >
-      <div className="text-center space-y-8">
-        <h2 className="text-4xl md:text-6xl font-bold text-white">
-          Connect With Us <br />
-          Let us bring your ideas to life.
-        </h2>
-        <p className="text-lg sm:pl-16 sm:pr-16 md:text-xl text-white/90 ">
-          When you succeed, we succeed. Our team of experts will go above and
-          beyond to understand your business and implement a solution that
-          shows immediate impact.
-        </p>
-        <Button  className="bg-[#008d92] text-emerald-900 hover:bg-white/10 font-semibold px-8 py-4 rounded-full">
-          Contact Us
-        </Button>
-        <div className="flex flex-wrap gap-6 items-center justify-center mt-8">
-          {ratings.map((rating, index) => (
-            <RatingCard
-              key={index}
-              logo={rating.icon}
-              rating={rating.rating}
-              reviewText={rating.reviews}
-            />
-          ))}
+      <div
+        ref={containerRef}
+        className="h-auto mx-4  rounded-3xl flex flex-col items-center justify-center px-6 py-16 bg-gradient-to-br from-[#008d92] via-[#528e90] to-[#4f9fa2]"
+      >
+        <div className="text-center space-y-8">
+          <h2 className="text-4xl md:text-6xl font-bold text-white">
+            Connect With Us <br />
+            Let us bring your ideas to life.
+          </h2>
+          <p className="text-lg sm:pl-16 sm:pr-16 md:text-xl text-white/90 ">
+            Subscribe to our newsletter and connect with us on WhatsApp to get
+            the latest updates, projects, and exclusive offers directly on your
+            phone. As the best IT company in Calicut, we make sure you're always
+            informed about the latest trends and services. Join our community
+            today and stay connected with Auxxweb Solutions to receive insights
+            and offers that can help your business grow!
+          </p>
+          <Button className="bg-[#008d92] text-emerald-900 hover:bg-white/10 font-semibold px-8 py-4 rounded-full">
+            Contact Us
+          </Button>
+          <div className="flex flex-wrap gap-6 items-center justify-center mt-8">
+            {ratings.map((rating, index) => (
+              <RatingCard
+                key={index}
+                logo={rating.icon}
+                rating={rating.rating}
+                reviewText={rating.reviews}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }

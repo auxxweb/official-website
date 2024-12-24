@@ -91,7 +91,7 @@ export default function AboutSection() {
           {/* Left Section (Text) */}
           <div ref={textRef} className="space-y-8">
             <div className="inline-block">
-              <span className="text-[#008d92] text-2xl font-semibold tracking-wider font-mono uppercase">
+              <span className="text-[#008d92]  text-2xl font-semibold tracking-wider font-mono uppercase ">
                 Who We Are
               </span>
             </div>
@@ -101,16 +101,15 @@ export default function AboutSection() {
             </h2>
 
             <p className="text-gray-400 text-lg sm:text-md md:text-2xl leading-relaxed font-mono">
-              We offer a wide range of comprehensive software development and
-              digital marketing services aimed at helping your business succeed
-              and grow in the rapidly evolving digital world.
-              <br /> Our team of skilled professionals works closely with
-              clients to create tailored solutions that not only address their
-              immediate needs but also position them for future success. With
-              expertise in modern technologies and a deep understanding of
-              market trends, we build innovative software applications that
-              streamline operations, improve efficiency, and enhance the
-              customer experience.
+              Welcome to Auxxweb Solutions, the best IT company in Calicut. We
+              are a group of specialists who are passionate and devoted to
+              providing outstanding digital solutions. Using cutting-edge
+              technology and creative approaches, our goal is to empower
+              businesses. At Auxxweb Solutions, we specialize in providing a
+              comprehensive range of IT services tailored to meet the unique
+              needs of our clients. From web development and mobile app creation
+              to digital marketing and IT consulting, we offer solutions that
+              drive growth and success.
             </p>
 
             {/* Services Section */}

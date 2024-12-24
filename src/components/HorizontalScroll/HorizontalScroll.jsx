@@ -12,18 +12,17 @@ const showcaseItems = [
     number: "1",
     title: "Mobile App Development",
     subtitle:
-      "Intuitive, high-performance apps for iOS and Android, designed to your target audience.",
-    description:
-      "Transform spaces with innovative architectural solutions ",
+      "Creating innovative and user-friendly mobile applications for both Android and iOS platforms is our specialty as an IT company in Calicut.",
+    description: " ",
   },
   {
     id: 2,
     number: "2",
     title: "Web Development",
     subtitle:
-      "Custom websites, e-commerce platforms, and web applications tailored to your business needs.",
+      "As a premier IT company in Calicut, we craft responsive and engaging websites tailored to your business needs.",
     description:
-      "Pioneering new approaches to spatial design through cutting-edge technology.",
+      "",
   },
   {
     id: 3,
@@ -190,9 +189,8 @@ export default function ServiceCard() {
             Our Services
           </h2>
           <p className="font-mono pb-10 text-center text-lg md:text-2xl text-gray-500 px-4">
-            At our IT service company, we offer a wide array of specialized
-            solutions designed to meet the diverse needs of businesses in the
-            digital age
+            At Auxxweb Solutions, the leading IT company in Calicut, we offer a
+            range of services to help your business thrive in the digital world:
           </p>
         </div>
       </div>
@@ -203,26 +201,24 @@ export default function ServiceCard() {
         } relative bg-[#111111] h-[100vh] pt-40 flex gap-4 md:gap-6 px-2 md:px-4`}
       >
         {showcaseItems.map((item, index) => (
-         <div
-         key={item.id}
-         ref={(el) => {
-           if (el) cardsRef.current[index] = el;
-         }}
-         className={`flex-none ${
-           isMobile ? "w-[90vw]" : "w-1/3"
-         } h-[74vh] relative border border-gray-200 rounded-lg shadow-lg overflow-hidden bg-cover bg-center bg-no-repeat`}
-         style={{
-           backgroundImage:
-             "url('https://www.thecuneiform.com/wp-content/uploads/2024/04/MicrosoftTeams-image-58-1024x683.webp')",
-         }}
-         onMouseEnter={() => handleCardHover(index)}
-         onMouseLeave={() => handleCardLeave(index)}
-       >
-         {/* Black overlay */}
-         <div className="absolute inset-0 bg-black opacity-60 z-1"></div>
-         
-       
-       
+          <div
+            key={item.id}
+            ref={(el) => {
+              if (el) cardsRef.current[index] = el;
+            }}
+            className={`flex-none ${
+              isMobile ? "w-[90vw]" : "w-1/3"
+            } h-[74vh] relative border border-gray-200 rounded-lg shadow-lg overflow-hidden bg-cover bg-center bg-no-repeat`}
+            style={{
+              backgroundImage:
+                "url('https://www.thecuneiform.com/wp-content/uploads/2024/04/MicrosoftTeams-image-58-1024x683.webp')",
+            }}
+            onMouseEnter={() => handleCardHover(index)}
+            onMouseLeave={() => handleCardLeave(index)}
+          >
+            {/* Black overlay */}
+            <div className="absolute inset-0 bg-black opacity-60 z-1"></div>
+
             <div className="absolute inset-0 flex flex-col justify-between p-4 md:p-8  ">
               <div>
                 <h2 className="font-mono text-3xl md:text-5xl text-start font-bold bg-gradient-to-r from-[#ffffff] to-[#295455] bg-clip-text text-transparent mb-2 relative">

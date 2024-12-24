@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GeometricFrame from "./Geomatric";
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight } from "lucide-react";
 import AboutSection from "../AboutSection";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -93,30 +93,27 @@ export default function Home() {
         },
         opacity: 0,
         scale: 0.8,
-        filter: "blur(10px)",
+        filter: "blur(90px)",
       });
 
       // About section reveal animation
-      gsap.from(aboutRef.current, {
-        scrollTrigger: {
-          trigger: aboutRef.current,
-          start: "top bottom",
-          end: "top center",
-          scrub: 1,
-        },
-        opacity: 0,
-        y: 100,
-      });
+      // gsap.from(aboutRef.current, {
+      //   scrollTrigger: {
+      //     trigger: aboutRef.current,
+      //     start: "top bottom",
+      //     end: "top center",
+      //     scrub: 1,
+      //   },
+      //   opacity: 0,
+      //   y: 100,
+      // });
     }, mainRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <main
-      ref={mainRef}
-      className="w-full bg-black relative overflow-hidden"
-    >
+    <main ref={mainRef} className="w-full  bg-black relative overflow-hidden">
       <div
         ref={homeRef}
         className="min-h-screen"
@@ -131,27 +128,27 @@ export default function Home() {
         <div ref={contentRef} className="container mx-auto px-4 py-20">
           <div className="relative min-h-[70vh]">
             {/* Center content */}
-            <div className="absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+            <div className="absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
               <div className="relative center-container">
                 <div
                   className="w-[450.95px] h-[450.95px] rounded-lg overflow-hidden frame 
                               sm:w-[314.95px] sm:h-[314.95px] 
                               md:w-[450.95px] md:h-[450.95px]"
                 >
-                  <div className="relative z-2 flex flex-col items-center justify-center h-full p-2 text-center">
-                    <div className="relative w-80 h-80  mt-2 center-image">
+                  <div className="relative z-0 flex flex-col items-center justify-center h-full p-2 text-center">
+                    <div className="relative w-80 h-80 mt-2 center-image">
                       <img
                         src="./banner/bnr (7).png"
-                        alt="Center Banner"    
+                        alt="Center Banner"
                         className="object-cover rounded-full w-full h-full"
                       />
-                    </div> 
+                    </div>
                     <h1 className="text-6xl mt-14 font-bold text-white content-text font-mono">
                       Auxxweb
                     </h1>
                     <p className="text-gray-200 max-w-md content-text">
-                      The Heatz Wireless Mouse combines pinpoint accuracy with an
-                      ergonomic build, designed for precision for long hours
+                      The Heatz Wireless Mouse combines pinpoint accuracy with
+                      an ergonomic build, designed for precision for long hours
                     </p>
                     <button className="mt-2 inline-flex items-center gap-2 px-4 py-2 bg-white text-black rounded-full hover:opacity-90 transition-opacity">
                       <ArrowUpRight className="w-8 bg-black text-white rounded-full h-8" />
@@ -162,7 +159,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Geometric frames */}  
+            {/* Geometric frames */}
             {frames.map((frame, index) => (
               <GeometricFrame
                 key={index}
@@ -172,12 +169,11 @@ export default function Home() {
               />
             ))}
           </div>
-        </div> 
+        </div>
       </div>
-      <div ref={aboutRef}>
+      <div >   
         <AboutSection />
       </div>
     </main>
   );
 }
-
