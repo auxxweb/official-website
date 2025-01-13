@@ -15,7 +15,7 @@ import AboutSection from "./AboutSection";
 
 const Home = () => {
   const handleClick = () => {
-    window.open(`https://wa.me/8590037942`, "_blank");
+    window.open(`https://wa.me/+918590037942`, "_blank");
   };
 
   return (

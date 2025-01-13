@@ -1,13 +1,7 @@
-
-
-export default function GeometricFrame({
-  dimensions,
-  className,
-  imagePath
-}) {
+export default function GeometricFrame({ dimensions, className, imagePath }) {
   return (
     <div className={className}>
-      <div className="relative w-[500px] h-[600px] sm:w-[250px] sm:h-[250px] md:w-[500px] md:h-[600px]">
+      <div className="relative w-[200px] h-[200px] sm:w-[50px] sm:h-[50px] md:w-[500px] md:h-[600px] lg:w-[500px] lg:h-[600px]">
         <div className="absolute inset-0 overflow-hidden rounded-lg">
           <img
             src={imagePath}
@@ -22,6 +16,5 @@ export default function GeometricFrame({
         </div> */}
       </div>
     </div>
-  )
+  );
 }
-

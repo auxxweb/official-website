@@ -462,7 +462,7 @@ const CareerPage = () => {
             }}
           />
 
-          <div className="max-w-7xl  relative z-10">
+          <div className="max-w-7xl  relative ">
             {/* Main Heading */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}

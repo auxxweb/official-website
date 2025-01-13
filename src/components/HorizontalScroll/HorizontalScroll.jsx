@@ -75,16 +75,16 @@ const showcaseItems = [
       "Creating harmony between aesthetic beauty and practical functionality in every design.",
   },
   {
-    id: 7,
-    number: "7",
+    id: 9,
+    number: "9",
     title: "Devops Automation",
     subtitle: "Streamlining Development with DevOps Automation.",
     description:
       "Creating harmony between aesthetic beauty and practical functionality in every design.",
   },
   {
-    id: 8,
-    number: "8",
+    id: 10,
+    number: "10",
     title: "Software Prototyping",
     subtitle: "Bringing Ideas to Life with Software Prototyping.",
     description:

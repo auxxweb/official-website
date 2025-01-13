@@ -122,7 +122,7 @@ const About = () => {
         </div>
 
         {/* Team Section */}
-        <div className="mt-20">
+        {/* <div className="mt-20">
           <motion.h2
             className="text-3xl md:text-5xl text-center font-medium"
             initial={{ opacity: 0, y: 20 }}
@@ -154,7 +154,7 @@ const About = () => {
               </motion.div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Footer */}

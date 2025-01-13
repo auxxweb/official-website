@@ -20,7 +20,7 @@ const BlogDetails = () => {
 
   return (
     <div>
-    <div className="max-w-4xl mx-auto px-4 py-8 font-sans">
+    <div className="max-w-4xl mx-auto px-4 py-8 font-mono">
     <button
           onClick={() => navigate(-1)}
           className="text-[#008d92] mb-4"
@@ -36,12 +36,12 @@ const BlogDetails = () => {
         />
         <div className="absolute inset-0 bg-[#111111] bg-opacity-50 flex flex-col justify-center items-center text-center text-white rounded-lg">
           <h2 className="text-2xl md:text-4xl font-bold mb-2">{blog.title}</h2>
-          <p className="italic text-sm md:text-lg">{blog.category}</p>
+          <p className="italic text-sm text-white md:text-lg">{blog.category}</p>
         </div>
       </div>
 
       {/* Blog Description */}
-      <div className="text-lg text-gray-300 leading-relaxed mb-6">
+      <div className="text-lg text-gray-200 leading-relaxed mb-6">
         <p>{blog.description}</p>
       </div>
 
@@ -49,12 +49,12 @@ const BlogDetails = () => {
       <div className="space-y-8">
         {blog.content.map((section, index) => (
           <div key={index}>
-            <h2 className="text-xl md:text-2xl font-bold text-gray-300 mb-4">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-200 mb-4">
               {section.heading}
             </h2>
-            <p className="text-gray-500 mb-4">{section.body}</p>
+            <p className="text-gray-200 mb-4">{section.body}</p>
             {section.points && (
-              <ul className="list-disc list-inside space-y-2 text-gray-500">
+              <ul className="list-disc list-inside space-y-2 text-gray-200">
                 {section.points.map((point, idx) => (
                   <li key={idx}>{point}</li>
                 ))}

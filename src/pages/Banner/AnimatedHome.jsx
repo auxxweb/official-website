@@ -25,7 +25,7 @@ const frames = [
   },
   {
     dimensions: "163.72 × 195.58",
-    position: "right-0 top-60 rotate-12",
+    position: "right-0 top-40 rotate-12",
     image: "./banner/right.png",
   },
   {
@@ -35,7 +35,7 @@ const frames = [
   },
   {
     dimensions: "193.71 × 290.57",
-    position: "-left-30 bottom-10 -rotate-6",
+    position: "-left-10 bottom--10 -rotate-6",
     image: "./banner/bnr (2).png",
   },
 ];
@@ -135,7 +135,7 @@ export default function Home() {
                               sm:w-[314.95px] sm:h-[314.95px] 
                               md:w-[450.95px] md:h-[450.95px]"
                 >
-                  <div className="relative z-0 flex flex-col items-center justify-center h-full p-2 text-center">
+                  <div className="relative flex flex-col items-center justify-center h-full p-2 text-center">
                     <div className="relative w-80 h-80 mt-2 center-image">
                       <img
                         src="./banner/bnr (7).png"
@@ -143,7 +143,7 @@ export default function Home() {
                         className="object-cover rounded-full w-full h-full"
                       />
                     </div>
-                    <h1 className="text-6xl mt-14 font-bold text-white content-text font-mono">
+                    <h1 className="text-6xl mt-14 font-bold text-white content-text font-sans">
                       Auxxweb
                     </h1>
                     <p className="text-gray-200 max-w-md content-text">
