@@ -92,6 +92,10 @@ export default function PricingCards() {
     },
   };
 
+  const handleClick = () => {
+    window.open(`https://wa.me/+918590037942`, "_blank");
+  };
+
   return (
     <div className="min-h-screen bg-[#111111] p-8">
       <div
@@ -133,7 +137,7 @@ export default function PricingCards() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-cyan-400 text-lg mb-6"
+            className="text-[#008d92] text-4xl sm:text-5xl md:text-4xl lg:text-5xl xl:text-5xl mb-6"
           >
             Pricing
           </motion.p>
@@ -142,7 +146,7 @@ export default function PricingCards() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            className=" text-3xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-white mb-6 leading-tight"
           >
             Custom Websites. <br />
             Marketing. Automation.
@@ -159,7 +163,7 @@ export default function PricingCards() {
             scale your growth.
           </motion.p>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
@@ -182,7 +186,7 @@ export default function PricingCards() {
                 <span>{feature.text}</span>
               </motion.div>
             ))}
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Gradient Overlay */}
@@ -257,6 +261,7 @@ export default function PricingCards() {
                 ))}
               </div>
               <motion.button
+              onClick={handleClick}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className={`w-full mt-4 py-4 rounded-xl mb-2 font-medium transition-all duration-200 ${plan.buttonClass}`}

@@ -186,7 +186,7 @@ const Faq = () => {
                   openIndex === index ? "max-h-96" : "max-h-0"
                 }`}
               >
-                <p className="text-[#A3A3A3] font-normal p-3 md:p-4">
+                <p className="text-[#A3A3A3] font-normal p-3 md:p-4 leading-relaxed">
                   {faq.answer}
                 </p>
               </div>

@@ -14,6 +14,7 @@ const showcaseItems = [
     subtitle:
       "Creating innovative and user-friendly mobile applications for both Android and iOS platforms is our specialty as an IT company in Calicut.",
     description: " ",
+    image:'https://riseuplabs.com/wp-content/uploads/2021/07/mobile-application-development-guidelines-riseuplabs.jpg'
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ const showcaseItems = [
       "As a premier IT company in Calicut, we craft responsive and engaging websites tailored to your business needs.",
     description:
       "",
+      image:'https://media.licdn.com/dms/image/D5612AQGvXXjCBq-Etg/article-cover_image-shrink_600_2000/0/1688710312431?e=2147483647&v=beta&t=Sr-TVjdDa7XsqxzaOEM9IGB7plCwHCm5ihB2cyglZMc'
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ const showcaseItems = [
       "User-centric designs that enhance user experience and drive engagement.",
     description:
       "Reimagining architectural possibilities through bold vision and transformative design thinking.",
+      image:'https://new.mobitouch.pl/wp-content/uploads/2023/09/UI-Designera_-Blog-Main.jpg'
   },
   {
     id: 4,
@@ -40,6 +43,7 @@ const showcaseItems = [
     subtitle: "Ensuring Quality Through Rigorous Software Testing",
     description:
       "Creating immersive environments that engage and inspire through thoughtful architectural design.",
+      image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAL0QbayYR3xVunz5bh3-kJAYtLDoJMn6TlQ&s'
   },
   {
     id: 5,
@@ -49,6 +53,7 @@ const showcaseItems = [
       "Comprehensive strategies to increase your online presence and drive growth.",
     description:
       "Evolving architectural practices to meet future challenges and environmental responsibilities.",
+      image:'https://img.freepik.com/free-photo/digital-marketing-with-icons-business-people_53876-94833.jpg?semt=ais_hybrid'
   },
   {
     id: 6,
@@ -57,6 +62,7 @@ const showcaseItems = [
     subtitle: "Transforming Businesses with Scalable Cloud Computing.",
     description:
       "Creating harmony between aesthetic beauty and practical functionality in every design.",
+      image:'https://media.licdn.com/dms/image/v2/D5612AQGdJwTfkaVA9A/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1695748849925?e=2147483647&v=beta&t=8K6s9J2TUbBn7MEFbWoW9N7WarAyvj3Z4ufb9Z6NXyM'
   },
   {
     id: 7,
@@ -65,6 +71,7 @@ const showcaseItems = [
     subtitle: "Streamlining Development with DevOps Automation.",
     description:
       "Creating harmony between aesthetic beauty and practical functionality in every design.",
+      image:'https://exito-e.com/devopssummit/blog/wp-content/uploads/2024/08/IMG.webp'
   },
   {
     id: 8,
@@ -73,6 +80,7 @@ const showcaseItems = [
     subtitle: "Bringing Ideas to Life with Software Prototyping.",
     description:
       "Creating harmony between aesthetic beauty and practical functionality in every design.",
+      image:'https://learn.g2.com/hubfs/app%20prototyping%20image.jpg'
   },
   {
     id: 9,
@@ -208,10 +216,11 @@ export default function ServiceCard() {
             }}
             className={`flex-none ${
               isMobile ? "w-[90vw]" : "w-1/3"
-            } h-[74vh] relative border border-gray-200 rounded-lg shadow-lg overflow-hidden bg-cover bg-center bg-no-repeat`}
+            } h-[72vh] relative border border-gray-200 rounded-lg shadow-lg overflow-hidden bg-cover bg-center bg-no-repeat`}
             style={{
-              backgroundImage:
-                "url('https://www.thecuneiform.com/wp-content/uploads/2024/04/MicrosoftTeams-image-58-1024x683.webp')",
+              backgroundImage: `url(${item.image})`,
+              backgroundSize: 'cover', // Optional: ensures the background covers the entire element
+              backgroundPosition: 'center', 
             }}
             onMouseEnter={() => handleCardHover(index)}
             onMouseLeave={() => handleCardLeave(index)}

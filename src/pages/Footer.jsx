@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { Button } from "../components/ui/button";
-import { Facebook, Instagram, Twitter, Music, Linkedin } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Twitter,
+  Music,
+  Linkedin,
+  Link,
+} from "lucide-react";
 import { NavLink } from "react-router-dom";
 import Menu from "../components/menu/Menu";
 
@@ -12,11 +19,11 @@ export default function Footer() {
       {/* Main Text with Button Overlay */}
       <div className="relative text-center w-full max-w-7xl mt-16 md:mt-24 px-4">
         <h1
-          className={`text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-light transition-opacity duration-500 whitespace-nowrap ${
+          className={`text-3xl sm:text-5xl md:text-5xl lg:text-7xl font-light transition-opacity duration-500 whitespace-nowrap ${
             isHovered ? "opacity-20" : "opacity-100"
           }`}
         >
-          Pssst. Waiting you!
+          Let’s Build the Future Together.
         </h1>
 
         <div
@@ -25,15 +32,18 @@ export default function Footer() {
           onMouseLeave={() => setIsHovered(false)}
         >
           <Button
-            className={`bg-transparent border border-[#00FF00] text-[#00FF00] rounded-full px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg
-  transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00FF00] 
+            className={`bg-transparent border border-[#008d92] text-[#008d92] rounded-full px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg
+  transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#008d92] 
   hover:scale-110 hover:rounded-[30px] ${
     isHovered ? "opacity-100 scale-110" : "opacity-0 scale-90"
   }`}
             onClick={() => (window.location.href = "tel:+91 8590037942")} // Replace with your phone number
           >
             Reach Out to Us
-            <span className="ml-2 text-xl sm:text-2xl">+</span>
+            <span className="ml-2 text-xl sm:text-2xl">
+              {" "}
+              <Link className="ml-1 sm:w-6 sm:h-6 w-5 h-5 text-blue-500" />
+            </span>
           </Button>
         </div>
       </div>
@@ -50,19 +60,30 @@ export default function Footer() {
           {/* Middle Section - Social Icons */}
           <div className="flex items-center justify-center gap-4 my-4 md:my-0">
             {[
-              { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=61571207122327" },
+              {
+                Icon: Facebook,
+                href: "https://www.facebook.com/profile.php?id=61571207122327",
+              },
               { Icon: Twitter, href: "https://x.com/AuxxWeb" },
-              { Icon: Linkedin, href: "https://www.linkedin.com/company/auxxweb-solutions/" },
-              { Icon: Instagram, href: "https://www.instagram.com/auxxweb_solutions/" },
+              {
+                Icon: Linkedin,
+                href: "https://www.linkedin.com/company/auxxweb-solutions/",
+              },
+              {
+                Icon: Instagram,
+                href: "https://www.instagram.com/auxxweb_solutions/",
+              },
             ].map(({ Icon, href }, index) => (
-              <NavLink
+              <a
                 key={index}
-                to={href}
+                href={href}
+                target="_blank" // This makes the link open in a new tab
+                rel="noopener noreferrer" // Recommended for security reasons when using target="_blank"
                 className="bg-neutral-900 p-2 md:p-2.5 rounded-full transition-all duration-300
-                hover:bg-[#008d92] hover:scale-110 hover:shadow-[0_0_15px_#008d92]"
+      hover:bg-[#008d92] hover:scale-110 hover:shadow-[0_0_15px_#008d92]"
               >
                 <Icon className="w-4 h-4 text-white" />
-              </NavLink>
+              </a>
             ))}
           </div>
 
