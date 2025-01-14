@@ -111,6 +111,9 @@ export default function Home() {
 
     return () => ctx.revert();
   }, []);
+  const handleClick = () => {
+    window.open(`https://wa.me/+918590037942`, "_blank");
+  };
 
   return (
     <main ref={mainRef} className="w-full  bg-black relative overflow-hidden">
@@ -150,9 +153,9 @@ export default function Home() {
                       The Heatz Wireless Mouse combines pinpoint accuracy with
                       an ergonomic build, designed for precision for long hours
                     </p>
-                    <button className="mt-2 inline-flex items-center gap-2 px-4 py-2 bg-white text-black rounded-full hover:opacity-90 transition-opacity">
+                    <button onClick= {handleClick}className="mt-2 inline-flex items-center gap-2 px-4 py-2 bg-white text-black rounded-full hover:opacity-90 transition-opacity">
                       <ArrowUpRight className="w-8 bg-black text-white rounded-full h-8" />
-                      <span className="text-sm font-medium">connect</span>
+                      <span  className="text-sm font-medium">connect</span>
                     </button>
                   </div>
                 </div>

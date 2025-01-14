@@ -51,6 +51,10 @@ const Menu = () => {
     }
   }, [isMenuOpen]);
 
+  const handleClick = () => {
+    window.open(`https://wa.me/+918590037942`, "_blank");
+  };
+
   return (
     <div className="menu-container " ref={container}>
       <div className="menu-bar">
@@ -118,16 +122,27 @@ const Menu = () => {
               ))}
             </div>
             <div className="menu-info">
-              <div className="menu-info-cool">
-                <a href="">X&#8599;</a>
-                <a href="">Instagram &#8599;</a>
-                <a href="">Facebook &#8599;</a>
-                <a href="">Whatsapp &#8599;</a>
-                <a href="">Linkedin &#8599;</a>
-              </div>
+            <div className="menu-info-cool">
+  <a href="https://x.com/AuxxWeb" target="_blank" rel="noopener noreferrer">
+    X&#8599;
+  </a>
+  <a href="https://www.instagram.com/auxxweb_solutions/" target="_blank" rel="noopener noreferrer">
+    Instagram &#8599;
+  </a>
+  <a href="https://www.facebook.com/profile.php?id=61571207122327" target="_blank" rel="noopener noreferrer">
+    Facebook &#8599;
+  </a>
+  <a onClick={handleClick} href="" target="_blank" rel="noopener noreferrer">
+    Whatsapp &#8599;
+  </a>
+  <a href="https://www.linkedin.com/company/auxxweb-solutions/" target="_blank" rel="noopener noreferrer">
+    Linkedin &#8599;
+  </a>
+</div>
+
               <div className="menu-info-cool">
                 <p>Auxxweb@gmail.com</p>
-                <p>+91 7510115894</p>
+                <p>+91 8590037942</p>
               </div>
             </div>
           </div>
