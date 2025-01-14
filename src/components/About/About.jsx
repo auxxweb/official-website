@@ -4,29 +4,58 @@ import Footer from "../../pages/Footer";
 import { NavLink } from "react-router-dom";
 import { ArrowDownRight } from "lucide-react";
 import Menu from "../menu/Menu";
+import PeopleCards from "../../pages/PeopleCards";
 
 const About = () => {
+
   const team = [
     {
-      name: "Andrew Tate",
-      role: "Motivator",
-      image:
-        "https://media.istockphoto.com/id/1088909778/photo/portrait-of-handsome-smiling-young-man-studio-shot.jpg?s=612x612&w=0&k=20&c=989h9CKzvxQ7-hXUnl7sNeIjJZYkiys7re7083JT4Es=",
+      id: 1,
+      name: "Adharsh Raj",
+      role: "Founder & CEO",
+      image: "./team/adarsh.jpeg",
     },
     {
-      name: "Mr Beast",
-      role: "Gamer",
-      image:
-        "https://media.istockphoto.com/id/1088909778/photo/portrait-of-handsome-smiling-young-man-studio-shot.jpg?s=612x612&w=0&k=20&c=989h9CKzvxQ7-hXUnl7sNeIjJZYkiys7re7083JT4Es=",
+      id: 2,
+      name: "Gurupriyan",
+      role: "Chief Technical Officer",
+      image: "./team/aux-cto.jpeg",
     },
     {
-      name: "Olivia Rodrigo",
-      role: "Digital Marketing",
-      image:
-        "https://media.istockphoto.com/id/1088909778/photo/portrait-of-handsome-smiling-young-man-studio-shot.jpg?s=612x612&w=0&k=20&c=989h9CKzvxQ7-hXUnl7sNeIjJZYkiys7re7083JT4Es=",
+      id: 3,
+      name: "Jithin",
+      role: "Chief Operating Officer",
+      image: "./team/jithin.jpg",
     },
-    // Add additional team members here if needed...
+    {
+      id: 4,
+      name: "Sooraj",
+      role: " Chief Client Relations Officer",
+      image: "./team/sooraj.jpg",
+    },
   ];
+
+  // const team = [
+  //   {
+  //     name: "Andrew Tate",
+  //     role: "Motivator",
+  //     image:
+  //       "https://media.istockphoto.com/id/1088909778/photo/portrait-of-handsome-smiling-young-man-studio-shot.jpg?s=612x612&w=0&k=20&c=989h9CKzvxQ7-hXUnl7sNeIjJZYkiys7re7083JT4Es=",
+  //   },
+  //   {
+  //     name: "Mr Beast",
+  //     role: "Gamer",
+  //     image:
+  //       "https://media.istockphoto.com/id/1088909778/photo/portrait-of-handsome-smiling-young-man-studio-shot.jpg?s=612x612&w=0&k=20&c=989h9CKzvxQ7-hXUnl7sNeIjJZYkiys7re7083JT4Es=",
+  //   },
+  //   {
+  //     name: "Olivia Rodrigo",
+  //     role: "Digital Marketing",
+  //     image:
+  //       "https://media.istockphoto.com/id/1088909778/photo/portrait-of-handsome-smiling-young-man-studio-shot.jpg?s=612x612&w=0&k=20&c=989h9CKzvxQ7-hXUnl7sNeIjJZYkiys7re7083JT4Es=",
+  //   },
+  //   // Add additional team members here if needed...
+  // ];
 
   return (
     <div className="relative min-h-screen bg-[#111111] text-white">
@@ -122,15 +151,20 @@ const About = () => {
         </div>
 
         {/* Team Section */}
-        {/* <div className="mt-20">
+        <div className="mt-20">
+          <h2 className="text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl text-center font-bold">
+          <span className="text-white">Making Social Media</span>{" "}
+          <span className="text-[#008d92]">Making Again</span>
+        </h2>
           <motion.h2
-            className="text-3xl md:text-5xl text-center font-medium"
+            className="text-3xl md:text-7xl text-center font-medium"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
           >
-            Our Team
+            Our Values
           </motion.h2>
+         {/* <PeopleCards/> */}
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
             {team.map((member, index) => (
@@ -144,7 +178,7 @@ const About = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="object-cover w-full h-56 transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover w-full h-72 transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-80" />
                 <div className="absolute bottom-4 left-4">
@@ -154,7 +188,7 @@ const About = () => {
               </motion.div>
             ))}
           </div>
-        </div> */}
+        </div>
       </div>
 
       {/* Footer */}

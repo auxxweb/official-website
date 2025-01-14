@@ -63,11 +63,11 @@ export const AnimatedTooltip = ({ items }) => {
                                         rotate: rotate,
                                         whiteSpace: "nowrap",
                                     }}
-                                    className="absolute -top-16  left-1/2 -translate-x-1/2 flex text-xs flex-col items-center justify-center rounded-md bg-white z-50 shadow-xl px-4 py-2"
+                                    className="absolute -top-16  left-1/2 -translate-x-1/2 flex text-xs flex-col items-center justify-center rounded-md bg-white  shadow-xl px-4 py-2"
                                 >
                                     <div className="absolute bottom-0 w-full h-[2px] bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
 
-                                    <div className="font-bold text-black relative z-30 text-base">
+                                    <div className="font-bold text-black relative  text-base">
                                         {item.name}
                                     </div>
                                     <div className="text-black text-xs">{item.designation}</div>
