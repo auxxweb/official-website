@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GeometricFrame from "./Geomatric";
 import { ArrowUpRight } from "lucide-react";
 import AboutSection from "../AboutSection";
+import bannerImage from "../../assets/banner/bnr (7).png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,32 +12,32 @@ const frames = [
   {
     dimensions: "421.26 × 631.89",
     position: "-left-70 top-20 -rotate-12",
-    image: "./banner/bnr (1).png",
+    image: require("../../assets/banner/bnr (1).png"),
   },
   {
     dimensions: "193.71 × 290.57",
     position: "right-10 -top-10 rotate-12",
-    image: "./banner/bnr (2).png",
+    image: require("../../assets/banner/bnr (2).png"),
   },
   {
     dimensions: "193.71 × 290.57",
     position: "right-400 -top-50 rotate-12",
-    image: "./banner/bnr (4).png",
+    image: require("../../assets/banner/bnr (4).png"),
   },
   {
     dimensions: "163.72 × 195.58",
     position: "right-0 top-40 rotate-12",
-    image: "./banner/right.png",
+    image: require("../../assets/banner/right.png"),
   },
   {
     dimensions: "438 × 548",
     position: "right-80 bottom-10 rotate-12",
-    image: "./banner/bnr (4).png",
+    image:  require("../../assets/banner/bnr (4).png"),
   },
   {
     dimensions: "193.71 × 290.57",
     position: "-left-10 bottom--10 -rotate-6",
-    image: "./banner/bnr (2).png",
+    image:  require("../../assets/banner/bnr (2).png"),
   },
 ];
 
@@ -141,7 +142,7 @@ export default function Home() {
                   <div className="relative flex flex-col items-center justify-center h-full p-2 text-center">
                     <div className="relative w-80 h-80 mt-2 center-image">
                       <img
-                        src="./banner/bnr (7).png"
+                        src={bannerImage}
                         alt="Center Banner"
                         className="object-cover rounded-full w-full h-full"
                       />

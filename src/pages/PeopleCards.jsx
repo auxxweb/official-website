@@ -8,25 +8,25 @@ const PeopleCards = () => {
       id: 1,
       name: "Adharsh Raj",
       designation: "Founder & CEO",
-      image: "./team/adarsh.jpeg",
+      image: require("../assets/team/adarsh.jpeg"),
     },
     {
       id: 2,
       name: "Gurupriyan",
       designation: "Chief Technical Officer",
-      image: "./team/aux-cto.jpeg",
+      image: require("../assets/team/aux-cto.jpeg"),
     },
     {
       id: 3,
       name: "Jithin",
       designation: "Chief Operating Officer",
-      image: "./team/jithin.jpg",
+      image:require("../assets/team/jithin.jpg"),
     },
     {
       id: 4,
       name: "Sooraj",
       designation: " Chief Client Relations Officer",
-      image: "./team/sooraj.jpg",
+      image: require("../assets/team/sooraj.jpg"),
     },
   ];
 

@@ -3,6 +3,9 @@ import "./menu.css";
 import { NavLink } from "react-router-dom";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import Logo from "../../assets/1.png"
+import Logo1 from "../../assets/3.png"
+
 
 const menuLinks = [
   { path: "/", label: "Home" },
@@ -61,7 +64,7 @@ const Menu = () => {
         <div className="menu-logo  inline-block px-3 py-1 rounded-xl bg-white/10 text-sm backdrop-blur-sm mb-2 sm:mb-3">
           <NavLink to="/" exact>
             <img
-              src="/1.png"
+              src={Logo}
               alt="Logo"
               className="object-contain"
               style={{ width: "220px", height: "60px" }}
@@ -93,7 +96,7 @@ const Menu = () => {
             <div className="menu-logo">
               <NavLink to="/" exact>
                 <img
-                  src="/3.png"
+                  src={Logo1}
                   alt="Logo"
                   className="object-contain"
                   style={{ width: "220px", height: "60px" }}
