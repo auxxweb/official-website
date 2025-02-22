@@ -130,7 +130,7 @@ export default function ServiceCard() {
       if (isMobile) {
         // Mobile animation
         gsap.to(cards, {
-          xPercent: -100 * (cards.length - 1),
+          xPercent: -100 * (cards.length),
           ease: "none",
           scrollTrigger: {
             trigger: container,
@@ -205,7 +205,7 @@ export default function ServiceCard() {
       <div
         ref={containerRef}
         className={`${
-          isMobile ? "h-[100vh] bg-[#111111] pt-40 pl-4 " : "h-screen"
+          isMobile ? "h-screen bg-[#111111] pt-40 pl-4 pr-40 " : "h-screen"
         } relative bg-[#111111] h-[100vh] pt-40 flex gap-4 md:gap-6 px-2 md:px-4`}
       >
         {showcaseItems.map((item, index) => (
@@ -220,7 +220,7 @@ export default function ServiceCard() {
             style={{
               backgroundImage: `url(${item.image})`,
               backgroundSize: 'cover', // Optional: ensures the background covers the entire element
-              backgroundPosition: 'center', 
+              backgroundPosition: 'center',
             }}
             onMouseEnter={() => handleCardHover(index)}
             onMouseLeave={() => handleCardLeave(index)}

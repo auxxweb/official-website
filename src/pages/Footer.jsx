@@ -19,7 +19,7 @@ export default function Footer() {
       {/* Main Text with Button Overlay */}
       <div className="relative text-center w-full max-w-7xl mt-16 md:mt-24 px-4">
         <h1
-          className={`text-3xl sm:text-5xl md:text-5xl lg:text-7xl font-light transition-opacity duration-500 whitespace-nowrap ${
+          className={`text-2xl sm:text-5xl md:text-5xl lg:text-7xl font-light transition-opacity duration-500 whitespace-nowrap ${
             isHovered ? "opacity-20" : "opacity-100"
           }`}
         >
@@ -33,7 +33,7 @@ export default function Footer() {
         >
           <Button
             className={`bg-transparent border border-[#008d92] text-[#008d92] rounded-full px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg
-  transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#008d92] 
+  transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#008d92]
   hover:scale-110 hover:rounded-[30px] ${
     isHovered ? "opacity-100 scale-110" : "opacity-0 scale-90"
   }`}

@@ -33,7 +33,7 @@ const Home = () => {
         <AnimatedHome/>
         {/* <AboutSection/> */}
         <ServiceCard />
-        <PeopleCards />      
+        <PeopleCards />
         <TechStack />
         <FloatingBubbles />
         <PricingCards />
